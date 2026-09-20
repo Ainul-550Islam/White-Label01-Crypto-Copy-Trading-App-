@@ -1,0 +1,210 @@
+{
+  "schema": "part11-rls-coverage-v1",
+  "stamp": "20260913120000",
+  "policyName": "tenant_isolation",
+  "functionName": "wlct_current_tenant_id",
+  "covered": [
+    {
+      "table": "account_balance_snapshots",
+      "model": "AccountBalanceSnapshot"
+    },
+    {
+      "table": "backtest_metrics",
+      "model": "BacktestMetric"
+    },
+    {
+      "table": "backtest_runs",
+      "model": "BacktestRun"
+    },
+    {
+      "table": "backtest_trades",
+      "model": "BacktestTrade"
+    },
+    {
+      "table": "engine_incidents",
+      "model": "ExecutionEngineIncident"
+    },
+    {
+      "table": "engine_order_events",
+      "model": "ExecutionOrderEvent"
+    },
+    {
+      "table": "engine_order_fills",
+      "model": "ExecutionOrderFill"
+    },
+    {
+      "table": "engine_orders",
+      "model": "ExecutionOrder"
+    },
+    {
+      "table": "engine_retention_runs",
+      "model": "ExecutionRetentionRun"
+    },
+    {
+      "table": "exchange_stream_sessions",
+      "model": "ExchangeStreamSession"
+    },
+    {
+      "table": "execution_incidents",
+      "model": "ExecutionIncident"
+    },
+    {
+      "table": "kyc_profiles",
+      "model": "KycProfile"
+    },
+    {
+      "table": "login_attempts",
+      "model": "LoginAttempt"
+    },
+    {
+      "table": "notifications",
+      "model": "Notification"
+    },
+    {
+      "table": "orders",
+      "model": "Order"
+    },
+    {
+      "table": "paper_portfolio_snapshots",
+      "model": "PaperPortfolioSnapshot"
+    },
+    {
+      "table": "paper_trading_sessions",
+      "model": "PaperTradingSession"
+    },
+    {
+      "table": "positions",
+      "model": "Position"
+    },
+    {
+      "table": "reconciliation_discrepancies",
+      "model": "ReconciliationDiscrepancy"
+    },
+    {
+      "table": "reconciliation_runs",
+      "model": "ReconciliationRun"
+    },
+    {
+      "table": "refresh_tokens",
+      "model": "RefreshToken"
+    },
+    {
+      "table": "risk_configuration_versions",
+      "model": "RiskConfigurationVersion"
+    },
+    {
+      "table": "risk_configurations",
+      "model": "RiskConfiguration"
+    },
+    {
+      "table": "risk_events",
+      "model": "RiskEvent"
+    },
+    {
+      "table": "risk_protection_actions",
+      "model": "RiskProtectionTrip"
+    },
+    {
+      "table": "risk_snapshot_metadata",
+      "model": "RiskSnapshotMetadata"
+    },
+    {
+      "table": "strategies",
+      "model": "Strategy"
+    },
+    {
+      "table": "strategy_checkpoints",
+      "model": "StrategyCheckpoint"
+    },
+    {
+      "table": "strategy_incidents",
+      "model": "StrategyIncident"
+    },
+    {
+      "table": "strategy_runs",
+      "model": "StrategyRun"
+    },
+    {
+      "table": "tenant_api_keys",
+      "model": "TenantApiKey"
+    },
+    {
+      "table": "tenant_branding",
+      "model": "TenantBranding"
+    },
+    {
+      "table": "tenant_domains",
+      "model": "TenantDomain"
+    },
+    {
+      "table": "tenant_feature_flags",
+      "model": "TenantFeatureFlag"
+    },
+    {
+      "table": "tenant_settings",
+      "model": "TenantSetting"
+    },
+    {
+      "table": "tenant_subscriptions",
+      "model": "TenantSubscription"
+    },
+    {
+      "table": "trading_accounts",
+      "model": "TradingAccount"
+    },
+    {
+      "table": "trading_sessions",
+      "model": "TradingSession"
+    },
+    {
+      "table": "trading_symbols",
+      "model": "TradingSymbol"
+    },
+    {
+      "table": "user_roles",
+      "model": "UserRole"
+    },
+    {
+      "table": "user_sessions",
+      "model": "UserSession"
+    },
+    {
+      "table": "users",
+      "model": "User"
+    },
+    {
+      "table": "verification_tokens",
+      "model": "VerificationToken"
+    }
+  ],
+  "excluded": [
+    {
+      "table": "audit_logs",
+      "model": "AuditLog"
+    },
+    {
+      "table": "kill_switches",
+      "model": "KillSwitch"
+    },
+    {
+      "table": "ops_alerts",
+      "model": "OpsAlert"
+    },
+    {
+      "table": "ops_incidents",
+      "model": "OpsIncident"
+    },
+    {
+      "table": "roles",
+      "model": "Role"
+    },
+    {
+      "table": "security_events",
+      "model": "SecurityEvent"
+    },
+    {
+      "table": "subscription_plans",
+      "model": "SubscriptionPlan"
+    }
+  ]
+}

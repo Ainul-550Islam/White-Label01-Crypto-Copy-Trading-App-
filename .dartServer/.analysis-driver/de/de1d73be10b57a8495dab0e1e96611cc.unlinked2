@@ -1,0 +1,538 @@
+€ópoint	direction==toStringhashCode_currentOffset_currentLine_currentTextPosition_lineMetrics	_editable_isValidisValid_positionCache_getTextPositionForLinecurrentmoveNextmovePreviousmoveByOffset_foregroundRenderObject_backgroundRenderObjectdispose_updateForegroundPainterforegroundPainter_foregroundPainter_updatePainterpainter_painter_caretPainter_selectionPainter_autocorrectHighlightPainter_builtInForegroundPainters _cachedBuiltInForegroundPainters _createBuiltInForegroundPainters_builtInPainters_cachedBuiltInPainters_createBuiltInPaintersignorePointertextHeightBehaviortextWidthBasisdevicePixelRatio_devicePixelRatioobscuringCharacter_obscuringCharacterobscureText_obscureTextselectionHeightStyleselectionWidthStyletextSelectionDelegateselectionStartInViewport_selectionStartInViewportselectionEndInViewport_selectionEndInViewport_getTextPositionVerticalgetLineAtOffsetgetWordBoundarygetTextPositionAbovegetTextPositionBelow!_updateSelectionExtentsVisibility_setTextEditingValue_setSelectionmarkNeedsPaintsystemFontsDidChange	plainTexttext_textPainter_cachedAttributedValue_cachedCombinedSemanticsInfos_textIntrinsicsCache_textIntrinsics	textAligntextDirectionlocale
+strutStylecursorColorbackgroundCursorColor_disposeShowCursor
+showCursor_showCursor_showHideCursorhasFocus	_hasFocus	forceLine
+_forceLinereadOnly	_readOnlymaxLines	_maxLinesminLines	_minLinesexpands_expandsselectionColortextScaleFactor
+textScaler	selection
+_selectionoffset_offsetcursorWidth_cursorWidthcursorHeight_cursorHeightpaintCursorAboveText_paintCursorOnTopcursorOffsetcursorRadiusstartHandleLayerLink_startHandleLayerLinkendHandleLayerLink_endHandleLayerLinkfloatingCursorAddedMarginfloatingCursorOn_floatingCursorOn_floatingCursorTextPositionenableInteractiveSelection_enableInteractiveSelectionselectionEnabledpromptRectColorsetPromptRectRangemaxScrollExtent_maxScrollExtent_caretMarginclipBehavior_clipBehavior_semanticsInfo_cachedChildNodesgetBoxesForSelectiondescribeSemanticsConfiguration_handleSetTextassembleSemanticsNode_createShowOnScreenFor_handleSetSelection#_handleMoveCursorForwardByCharacter$_handleMoveCursorBackwardByCharacter_handleMoveCursorForwardByWord_handleMoveCursorBackwardByWord_getNextWord_getPreviousWord_onlyWhitespaceattachdetachredepthChildrenvisitChildren_isMultiline_viewportAxis_paintOffset_viewportExtent_getMaxScrollExtent_hasVisualOverflowgetEndpointsForSelectiongetRectForComposingRangegetPositionForPointgetLocalRectForCaretcomputeMinIntrinsicWidthcomputeMaxIntrinsicWidthpreferredLineHeight_cachedLineBreakCount_countHardLineBreaks_preferredHeightcomputeMinIntrinsicHeightcomputeMaxIntrinsicHeightcomputeDistanceToActualBaselinehitTestSelfhitTestChildren_tap
+_longPresshandleEvent_lastTapDownPosition_lastSecondaryTapDownPositionlastSecondaryTapDownPositionhandleSecondaryTapDownhandleTapDown_handleTapDown	handleTap
+_handleTaphandleDoubleTaphandleLongPress_handleLongPressselectPositionselectPositionAtwordBoundaries
+selectWordselectWordsInRangeselectWordEdgegetWordAtOffset_placeholderDimensions_adjustConstraints_computeTextMetricsIfNeeded_caretPrototype_computeCaretPrototype_snapToPhysicalPixelcomputeDryLayoutcomputeDryBaselineperformLayout_relativeOrigin_previousOffset_shouldResetOrigin_resetOriginOnLeft_resetOriginOnRight_resetOriginOnTop_resetOriginOnBottom"_resetFloatingCursorAnimationValue_calculateAdjustedCursorOffset$calculateBoundedFloatingCursorOffsetsetFloatingCursor_lineNumberForstartVerticalCaretMovement_paintContents_leaderLayerHandler_paintHandleLayersapplyPaintTransformpaint_clipRectLayerdescribeApproximatePaintClipdebugFillPropertiesdebugDescribeChildrenparentisRepaintBoundarysizedByParentshouldRepainthighlightPainthighlightColor_highlightColorhighlightedRange_highlightedRange_selectionHeightStyle_selectionWidthStyleshouldPaint_shouldPaintshowRegularCaret
+caretPaintfloatingCursorPaint
+caretColor_caretColor_cursorRadius_cursorOffset_backgroundCursorColorfloatingCursorRect_floatingCursorRectpaintRegularCursorpaintersaddListenerremoveListener
+_kCaretGap_kCaretHeightOffset_kFloatingCursorSizeIncrease_kFloatingCursorRadius6_kShortestDistanceSquaredWithFloatingAndRegularCursorsTextSelectionPointVerticalCaretMovementRunRenderEditable_RenderEditableCustomPaintRenderEditablePainter_TextHighlightPainter_CaretPainter_CompositeRenderEditablePainteršBoxHeightStyleBoxWidthStyleLineMetricsTextBoxdouble
+EdgeInsets	symmetric
+horizontalverticalRadiuscircular	immutableOffsetTextDirectionoverrideboolObject	identicalruntimeTypepoint	directionStringltrrtlinthashTextPositioncurrentIteratorList_textPaintercomputeLineMetricsMapMapEntrydxbaselinegetPositionForOffsetlengthkeyvaluedy	RenderBox"RelayoutWhenSystemFontsChangeMixinContainerRenderObjectMixinTextParentData%RenderInlineChildrenContainerDefaultsTextLayoutMetrics	TextAlignstartViewportOffsetzero
+InlineSpanColorValueNotifier	LayerLink
+StrutStyle
+Deprecated
+TextScaler	noScalingTextSelectionTextHeightBehaviorTextWidthBasisparentLocaletightfromLTRB	TextRangeCliphardEdge
+charactersTextPaintertext	textAligntextDirection
+textScalerlinearlocalemaxLines
+strutStyletextHeightBehaviortextWidthBasishighlightColorhighlightedRangeselectionHeightStyleselectionWidthStylepromptRectRange
+caretColorcursorRadiuscursorOffsetbackgroundCursorColoraddAllchildrenvoidlayerdisposepainterspainter
+adoptChildmarkNeedsLayoutmarkNeedsSemanticsUpdateTextSelectionDelegateValueListenablegetOffsetForCaret	translategetLineBoundary
+baseOffsetextentOffsetendgetWordBoundarypreferredLineHeightisValidRectsizeoffsetaffinityinflatecontainsTextEditingValueSelectionChangedCauseuserUpdateTextEditingValuetextEditingValuecopyWithmin	selectionmarkNeedsPaintsystemFontsDidChange	plainTextAttributedStringInlineSpanSemanticsInformationellipsisjustifyCupertinoColorsinactiveGrayFloatingCursorDragStateattachedremoveListeneraddListenershouldPainttextScaleFactorCompositedTransformTarget_combineSemanticsInfoLinkedHashMapKeySemanticsNodegetBoxesForSelectionmap	fromLTRBDtextBoxlefttoprightbottomtoListSemanticsConfigurationdescribeSemanticsConfigurationgetSemanticsInformationanyinfo
+recognizerdefaultTargetPlatformTargetPlatformmacOSisSemanticBoundaryexplicitChildNodesStringBufferStringAttributesemanticsLabelstringAttributesinfoAttributerangeaddcopywritetoString
+attributesattributedValue
+isObscuredisMultiline	isFocusedisTextField
+isReadOnlyonSetSelection	onSetTexttextSelectiongetOffsetBeforeonMoveCursorBackwardByWordonMoveCursorBackwardByCharactergetOffsetAfteronMoveCursorForwardByWordonMoveCursorForwardByCharacter	collapsedkeyboardIterable
+isNotEmpty
+firstChildcombineSemanticsInfoisPlaceholder	elementAtisTagged PlaceholderSpanIndexSemanticsTag
+parentData
+childAfterisEmptyfirsttoRectskipexpandToIncludefromLTWHmaxwidthconstraintsmaxWidthheight	maxHeightfloorToDoubleceilToDoublesortKeyOrdinalSortKeyattributedLabelTapGestureRecognizerVoidCallbackDoubleTapGestureRecognizeronTapisLinkLongPressGestureRecognizerGestureLongPressCallbackonLongPressparentPaintClipRect	intersectisHiddenremovekeys	UniqueKeyshowOnScreen
+updateWithconfigrectchildrenInInversePaintOrder
+descendantextentisCollapsedi
+codeUnitAtisWhitespacePipelineOwnerattach
+debugOwner	onTapDowndetachRenderObjectredepthChildredepthChildrenRenderObjectVisitorvisitChildrenAxispixelshasSizeSizeboxHeightStyleboxWidthStyleclampDoublelastfoldaccumincomingshiftglobalToLocalgetFullHeightForCaretiOS
+heightDiffandroidfuchsialinuxwindowscaretHeighttopLeftPlaceholderDimensionslayoutInlineChildreninfinityBoxConstraintschildgetMinIntrinsicWidthChildLayoutHelpergetDryBaselinesetPlaceholderDimensionslayoutminWidthminIntrinsicWidthgetMaxIntrinsicWidthmaxIntrinsicWidthindexminLinesgetMaxIntrinsicHeightdryLayoutChildTextBaselinecomputeDistanceToActualBaseline	protectedBoxHitTestResultposition	GlyphInfogetClosestGlyphForOffsetgraphemeClusterLayoutBoundsgetSpanForPositiongraphemeClusterCodeUnitRangeHitTestTargetHitTestEntryspanhitTestInlineChildrenPointerEventBoxHitTestEntrydebugHandleEventPointerDownEventdebugNeedsLayout
+addPointerTapDownDetailsglobalPositioncausetaponDoubleTap	doubleTap	longPressEditableTextTextEditingControllerfromtoWordBoundarywordBoundariesbaseTextAffinityupstreamvisibleForTestingfromPosition
+downstreamlocalToGlobalisFiniteroundconstrainWidthconstrainHeightlayoutChildgetBaselinepositionInlineChildreninlinePlaceholderBoxesapplyViewportDimensionapplyContentDimensionsshouldResetOriginEndresetLerpValuelerpfloatingCursorRectinflateRectshowRegularCaretlineMetrics
+lineNumberdescent_PaintingContext
+paintChildpaintcanvaspaintInlineChildrenLayerHandleLeaderLayerlink	pushLayerMatrix4defaultApplyPaintTransformnonepushClipRectneedsCompositingclipBehavioroldLayerClipRectLayer	antiAliasantiAliasWithSaveLayerDiagnosticPropertiesBuilderdebugFillPropertiesColorPropertyDiagnosticsPropertyIntPropertydefaultValueDiagnosticsNodetoDiagnosticsNodenamestyleDiagnosticsTreeStyle
+transitionshouldRepaint_computeTextMetricsIfNeededbiggestnotifyListenersforegroundPainterCustomPainterRenderCustomPaintChangeNotifierCanvasPaintcolordrawRectbox_paintOffsetgetLocalRectForCaretcenterdistanceSquaredRRectfromRectAndRadius	drawRRect_floatingCursorTextPositionwithOpacityiteratormoveNextIterator	RenderBox"RelayoutWhenSystemFontsChangeMixinContainerRenderObjectMixin%RenderInlineChildrenContainerDefaultsTextLayoutMetricsChangeNotifierRenderEditablePainterşÈzê¢Tâ²4Æ"üŠü    €¦  dart:collection  €À  €Òmath€Õ	dart:math€ò*BoxHeightStyleBoxWidthStyleLineMetricsTextBox €Ü  €ìui€ïdart:ui  .  "package:characters/characters.dart  [  package:flutter/foundation.dart  …  package:flutter/gestures.dart  ­  package:flutter/semantics.dart  Ö  package:flutter/services.dart  ÿ  box.dart  ‚  custom_paint.dart  ‚.  
+layer.dart  ‚C  layout_helper.dart  ‚`  object.dart  ‚v  paragraph.dart  ‚  viewport_offset.dart    	dart:coreÀ ¯æ À¾‹Ù <€†€¤€¥€¿€Û,-Z„¬Õış‚‚-‚B‚_‚u‚‚­‚®‚×ƒ	ƒ
+ƒXƒ‹ƒñƒò„)„e„f„Å……T…”…İ†0†1†z†É†â†í‡‡D‡|‡}‡ÉˆˆˆˆZˆ|ˆ}ˆ‰ˆ¬ˆÎˆáˆç‰‰'‰-‰T‰t‰‰¡‰¢‰®‰Ä‰äŠŠ6ŠNŠUŠYŠZŠfŠ›ŠœŠŠŸŠí‹9‹Q‹U‹Ÿ‹ìŒ9ŒˆŒÙ&RV¤óC’àş)3;E•â1Î‘‘-‘1‘‘Î’’A’T’X’™’ã“3“„“À“Ä””3”7”…”Ö•#•?•‚• •´•Ë•ê–––– –9–M–r–s––À–Á–Ù——!—o—…—‹—Û˜˜,˜A˜U˜[˜¸™™D™x™™–™«™¯™°šššgš|š™šğ››/›5›]›^›¹œœŠœµœÊœÎœÏœÛœø.23?Sh›¯µ+NyŠ¸¾öŸŸ#Ÿ@ŸTŸZŸ¹ŸĞŸó  / 3 4 v  • Û á¡¡>¡o¡ˆ¡Æ¡á¡ò¡ü¢¢¢O¢n¢¢‰¢‘¢—¢Ã¢Ç¢É¢Ê££@£D££Ş¤¤¤Z¤©¤ù¥G¥–¥­¥±¦¦R¦–§b§´§º§ø§ş¨M¨S¨¡¨ï©2©8©©’©¥©»©åªª(ªJªoªƒª°ªÛªò«««;«V«g«ˆ«÷¬3¬9¬[¬¬«¬Ï¬ï­
+­%­Q­Œ­±­Ï­ã®®®5®\®ƒ®¦®ì¯/¯U¯¡¯Á¯İ°°-°Q°°°Ï± ±±\±±š±©±æ²+²5²D²”²ô²ş³8³[³—³º³Ï³î´´€´™´Æ´çµµAµKµŠµ§µÄµßµş¶¶:¶_¶¶Ñ¶ş·3·d·•·¸·Õ·ô¸¸?¸p¸§¸¨¸ß¹¹V¹—¹˜¹Ûº º!ºMº|º«ºìºí»»;»Q»U»V»q»¨»ß»à»ì»ÿ¼%¼M¼q¼™¼½¼Ş½½6½_½†½²½Ó½ğ¾¾1¾O¾l¾¾”¾©¾­¾®¾ó¿C¿f¿±¿Ö¿ë¿õ¿öÀ @!À @˜À @ÂÀ @úÀ AÀ ABÀ AHÀ AmÀ AqÀ ArÀ A³À AÚÀ AàÀ B,À BrÀ BÀ BãÀ CÀ CMÀ CyÀ C‡À CÀ C·À C»À C¼À C÷À DGÀ D`À DÊÀ DËÀ DöÀ EmÀ E—À EÏÀ EÜÀ FÀ FÀ F8À F<À F=À F…À F¬À F²À FşÀ GIÀ GdÀ G–À G¹À GìÀ HÀ HÀ H"À HBÀ HFÀ HGÀ H\À H¦À HâÀ HãÀ IÀ ILÀ I¢À I£À J0À JuÀ J¼À JèÀ KÀ KBÀ KKÀ KRÀ KVÀ KWÀ KÆÀ LÀ L>À LjÀ L“À L¹À LÔÀ MÀ MÀ MÀ MÀ MÀ MfÀ MvÀ M|À MÉÀ NÀ NDÀ NJÀ N™À NÙÀ NßÀ OÀ O(À O)À OSÀ O¤À OÚÀ PÀ PÀ P"À POÀ PfÀ PjÀ PkÀ P¦À PêÀ QÀ QGÀ QUÀ Q[À Q„À Q›À QŸÀ Q À QÍÀ QÓÀ RÀ RQÀ RmÀ R”À R¹À RÇÀ RÍÀ RìÀ SÀ SÀ SÀ SJÀ SPÀ SyÀ S±À SÏÀ SøÀ T À T.À T4À T^À TÀ T–À TšÀ T›À TŞÀ UÀ UÀ U;À U\À UjÀ UpÀ UŠÀ U­À UÍÀ UÑÀ UÒÀ VÀ V"À VaÀ V¹À VïÀ W#À W'À W(À WrÀ WxÀ W¶À XÀ X?À XrÀ XvÀ XwÀ XÅÀ YÀ YÀ Y\À YÀ Y®À Y¯À ZÀ ZÀ ZXÀ Z¨À ZóÀ [À [À [YÀ [¤À [ÁÀ \À \gÀ \hÀ \½À \ÃÀ ]À ]XÀ ]§À ]ÁÀ ]ÇÀ ^À ^_À ^|À ^ËÀ _À _À _]À _µÀ `À `dÀ `©À `­À `®À `ÌÀ `ÍÀ aÀ aÀ aTÀ a—À aäÀ aûÀ bFÀ bLÀ b–À bšÀ b›À b×À bãÀ cÀ cKÀ cOÀ cPÀ c—À c£À càÀ d*À duÀ d´À dıÀ e;À ezÀ e~À eÀ eÆÀ eÒÀ fÀ fYÀ f¤À fãÀ g,À giÀ g¨À g¬À g­À gÉÀ gÊÀ hÀ h,À hKÀ hzÀ h§À hµÀ h»À hîÀ hïÀ i.À i{À i’À i™À iâÀ j0À j~À j¸À k	À kVÀ k€À k´À kÖÀ lÀ lÀ lEÀ lÀ l§À l®À làÀ mÀ m0À m4À m5À m‹À mÒÀ mÖÀ m×À n(À nIÀ n—À næÀ o3À oÀ oĞÀ pÀ pÀ pbÀ p³À páÀ q%À qmÀ qvÀ q|À q–À qçÀ qôÀ qûÀ qÿÀ r À rÀ r&À rBÀ rŠÀ r¹À rèÀ rìÀ ríÀ rùÀ sÀ s;À s_À scÀ sdÀ s¥À s«À sêÀ tÀ tcÀ t•À t–À tÖÀ tÜÀ u"À uOÀ uqÀ uÀ uäÀ vÀ v*À v8À v>À v`À vÀ v¢À vÌÀ vãÀ wÀ wÀ wÀ w-À wQÀ w…À w¦À wÑÀ xÀ x1À xZÀ xƒÀ x¨À xÕÀ y
+À yHÀ yLÀ yMÀ y€À yµÀ yØÀ zÀ zÀ zÀ z;À zRÀ zVÀ zWÀ z}À zƒÀ zÆÀ {À {À {[À {ªÀ {øÀ |AÀ |‘À |¡À |àÀ }'À }oÀ }±À }ÜÀ ~À ~À ~À ~GÀ ~^À ~~À ~‚À ~ƒÀ ~ÔÀ ~àÀ ~æÀ ;À ‰À ÙÀ €À €À €SÀ €cÀ €À €®À €ÖÀ €äÀ €êÀ À "À &À 'À oÀ ‘À ÊÀ ğÀ ‚À ‚*À ‚0À ‚UÀ ‚lÀ ‚pÀ ‚qÀ ‚¢À ‚ØÀ ‚úÀ ƒ À ƒ$À ƒ%À ƒoÀ ƒ”À ƒšÀ ƒßÀ ƒåÀ „"À „(À „8À „>À „À „¡À „ìÀ …À …IÀ …MÀ …NÀ …iÀ …jÀ …À …ÂÀ …åÀ †À †3À †AÀ †GÀ †[À †À †”À †²À †ÏÀ †ñÀ †÷À ‡À ‡$À ‡=À ‡mÀ ‡sÀ ‡wÀ ‡xÀ ‡“À ‡ÅÀ ‡ÉÀ ‡ÊÀ ‡ûÀ ˆÀ ˆ7À ˆTÀ ˆrÀ ˆ€À ˆ†À ˆÀ ˆ½À ˆÁÀ ˆÂÀ ‰À ‰;À ‰VÀ ‰tÀ ‰“À ‰¡À ‰§À ‰¿À ‰ÖÀ ‰ÚÀ ‰ÛÀ ŠÀ Š/À ŠIÀ ŠfÀ Š„À Š’À Š˜À Š¯À ŠÏÀ ŠÓÀ ŠÔÀ ‹#À ‹)À ‹sÀ ‹À ‹•À ‹ÖÀ ‹ÜÀ Œ*À ŒzÀ Œ·À ŒÙÀ ŒëÀ >À [À ƒÀ  À ®À ´À ËÀ ÌÀ À lÀ –À ÉÀ àÀ äÀ åÀ À <À NÀ ¡À ¾À æÀ À À À .À EÀ IÀ JÀ ~À À ¯À ËÀ çÀ õÀ ûÀ ‘À ‘(À ‘,À ‘-À ‘aÀ ‘¢À ‘ÇÀ ‘õÀ ‘ùÀ ‘úÀ ’@À ’\À ’bÀ ’šÀ ’ À ’ñÀ “À “À “>À “«À “åÀ “éÀ ”'À ”6À ”UÀ ”ÂÀ ”üÀ • À •&À •QÀ •UÀ •VÀ •À •ÅÀ •êÀ –À –$À –*À –OÀ –fÀ –jÀ –kÀ –À –¤À –æÀ –ìÀ —0À —[À —‰À —¦À —ÎÀ —íÀ —ûÀ ˜À ˜À ˜IÀ ˜_À ˜À ˜ƒÀ ˜„À ˜ºÀ ˜ÀÀ ™À ™\À ™¤À ™ÌÀ ™æÀ šÀ š'À š5À š;À šOÀ š}À šƒÀ š˜À š¬À š×À šİÀ šôÀ šøÀ šùÀ ›À ›GÀ ›dÀ ›†À ›§À ›µÀ ›»À ›ÕÀ ›ìÀ ›ğÀ ›ñÀ œÀ œÀ œwÀ œ}À œØÀ 'À “À ÖÀ ïÀ À 5À CÀ IÀ dÀ {À À €À ÈÀ ŸÀ ŸÀ ŸeÀ ŸÀ Ÿ¢À ŸØÀ ŸòÀ  À  AÀ  OÀ  UÀ  tÀ  ´À  áÀ ¡À ¡JÀ ¡|À ¡šÀ ¡À ¡ŸÀ ¡ßÀ ¢-À ¢3À ¢wÀ ¢ÀÀ £À £YÀ £nÀ £§À £ÊÀ £òÀ £öÀ £÷À ¤.À ¤4À ¤eÀ ¤ŸÀ ¤ÃÀ ¤ëÀ ¤ïÀ ¤ğÀ ¥!À ¥'À ¥rÀ ¥ÈÀ ¦À ¦*À ¦XÀ ¦‚À ¦À ¦–À ¦¹À ¦ÏÀ ¦ÓÀ ¦ÔÀ §À §	À §TÀ §¨À §ãÀ ¨À ¨0À ¨XÀ ¨fÀ ¨lÀ ¨À ¨£À ¨§À ¨¨À ¨óÀ ©À ©À ©gÀ ©mÀ ©}À ©ƒÀ ©ÒÀ ©æÀ ªÀ ªÀ ªVÀ ªˆÀ ªªÀ ªÛÀ ªÜÀ «À «À «_À «¢À «ÊÀ ¬À ¬KÀ ¬€À ¬†À ¬ÊÀ ­À ­;À ­]À ­¤À ­ÉÀ ­ùÀ ®)À ®7À ®=À ®fÀ ®}À ®À ®¡À ®¢À ®éÀ ¯À ¯%À ¯iÀ ¯¬À ¯ÔÀ °À °UÀ °ŠÀ °À °àÀ ±À ±
+À ±]À ±¦À ±¬À ±ğÀ ²5À ²|À ²ºÀ ²ØÀ ³À ³À ³À ³HÀ ³NÀ ³À ³÷À ´GÀ ´ŠÀ ´×À µ À µ<À µ@À µAÀ µÀ µÚÀ µàÀ ¶/À ¶5À ¶’À ¶ãÀ ·À ·RÀ ·VÀ ·WÀ ·À ·•À ·ŞÀ ¸&À ¸FÀ ¸xÀ ¸—À ¸˜À ¸ÏÀ ¸ĞÀ ¹À ¹À ¹/À ¹YÀ ¹À ¹ À ¹ÂÀ ¹ßÀ ¹÷À ºÀ ºÀ º#À º$À ºeÀ º À ºØÀ ºÙÀ »%À »tÀ »³À »İÀ ¼À ¼À ¼aÀ ¼¨À ¼ÕÀ ¼ÛÀ ½À ½ZÀ ½}À ½µÀ ½ùÀ ¾3À ¾lÀ ¾§À ¾ãÀ ¿À ¿4À ¿8À ¿9À ¿EÀ ¿ŒÀ ¿¾À ÀÀ ÀPÀ ÀÀ À½À ÀôÀ ÁUÀ ÁÀ Á¶À ÂÀ Â-À Â:À Â^À ÂƒÀ Â‘À Â—À ÂÁÀ ÂÚÀ Ã4À ÃCÀ ÃwÀ ÃÀ ÃÕÀ Ä"À ÄcÀ Ä²À ÄóÀ ÅÀ Å1À Å™À ÅªÀ Å¹À ÅÅÀ ÅäÀ ÆÀ ÆÀ ÆnÀ ÆvÀ Æ|À Æ‡À Æ¹À ÆÚÀ ÆıÀ Ç#À Ç@À Ç[À ÇzÀ Ç{À Ç£À ÇÖÀ ÇÜÀ ÇİÀ ÇşÀ È'À È-À È.À ÈkÀ È“À ÈŞÀ ÈíÀ É6À ÉŠÀ É’À ÉÜÀ ÉëÀ Ê2À Ê„À ÊŒÀ Ê’À Ê–À Ê—À Ê¼À ÊòÀ Ë
+À ËÀ Ë_À ËhÀ ËÀ Ë•À Ë™À ËšÀ Ë¦À ÌÀ Ì\À Ì›À ÌÏÀ ÌåÀ ÌÿÀ ÍÀ Í0À ÍHÀ ÍkÀ ÍÌÀ ÎÀ ÎqÀ Î¦À ÎÁÀ ÎñÀ ÎúÀ ÏÀ ÏÀ Ï<À ÏŠÀ ÏÑÀ Ğ À ĞnÀ Ğ¸À Ñ
+À Ñ7À Ñ]À ÑxÀ Ñ‚À Ñ¦À ÑÅÀ ÑÔÀ ÒÀ ÒjÀ Ò‡À Ò›À Ò¥À ÒÏÀ ÓÀ Ó;À ÓtÀ Ó¤À Ó®À ÓñÀ Ô5À ÔSÀ ÔwÀ ÔšÀ ÔĞÀ ÕÀ ÕÀ ÕaÀ Õ²À Õ×À ÖÀ Ö,À ÖWÀ ÖƒÀ ÖÀ ÖÜÀ ×À ×9À ×®À ×ÑÀ ØÀ ØkÀ ØŒÀ Ø·À ØâÀ ØğÀ ÙUÀ Ù|À Ù³À ÙÁÀ ÙÖÀ ÙéÀ ÙüÀ ÚKÀ ÚUÀ Ú…À ÚØÀ Û&À Û0À Û[À Û‘À ÛáÀ ÛòÀ ÜÀ ÜCÀ ÜYÀ ÜÀ ÜÀ Ü§À Ü¸À ÜæÀ İÀ İ7À İZÀ İbÀ İhÀ İÀ İŞÀ İâÀ İãÀ ŞÀ Ş%À Ş`À Ş—À ŞÀ Ş¢À Ş£À ŞêÀ ß*À ßpÀ ßqÀ ß§À ßåÀ ßéÀ ßêÀ à-À àLÀ à À àÀÀ àÎÀ àÔÀ á(À á;À á„À áªÀ á±À áµÀ á¶À áúÀ âÀ ânÀ âÀ âœÀ â¢À âöÀ ã	À ãRÀ ãxÀ ãÀ ãƒÀ ã„À ãÂÀ ãáÀ ä4À äsÀ äÀ äÀ ä£À äøÀ åÀ å À å@À åfÀ åoÀ å•À åœÀ å À å¡À åàÀ åÿÀ æRÀ æŸÀ æ¿À æÍÀ æÓÀ ç-À ç@À çUÀ çuÀ çŸÀ ç¨À çÎÀ çÕÀ çÙÀ çÚÀ èÀ èÀ èoÀ è À èµÀ è½À èâÀ èøÀ é À éÀ é À é$À é%À éQÀ ékÀ éÅÀ éöÀ êÀ êÀ ê8À êNÀ êVÀ êvÀ ê|À êÀ ê‘À ê’À êÜÀ êíÀ êòÀ ë6À ëˆÀ ëÊÀ ëôÀ ì(À ìYÀ ìÀ ì¦À ì®À ì´À ìÅÀ ìÉÀ ìÊÀ ìÖÀ ìûÀ íÀ í@À ílÀ ímÀ íŸÀ íÂÀ íŞÀ î=À îfÀ î}À î«À î¯À î°À î¼À îÎÀ îâÀ îüÀ ï(À ïYÀ ïmÀ ï”À ï»À ï¿À ïÀÀ ïÌÀ ïçÀ ğ*À ğmÀ ğÀ ğµÀ ğ»À ğŞÀ ñÀ ñ	À ñ&À ñ*À ñ+À ñ7À ñkÀ ñ®À ññÀ òÀ ò4À ò:À ò]À ò}À òƒÀ ò¥À ò©À òªÀ òÔÀ òÕÀ ó!À ó"À ó>À óbÀ ó˜À óÎÀ óÕÀ óÙÀ óÚÀ óùÀ ôÀ ô2À ôWÀ ô}À ô„À ôˆÀ ô‰À ôºÀ ôÏÀ ôóÀ õ;À õ…À õŒÀ õÀ õ‘À õäÀ ö3À ö‰À öŠÀ ö×À öİÀ ÷.À ÷~À ÷ËÀ øÀ øcÀ øiÀ øyÀ øÀ øÀÀ øùÀ ùHÀ ùkÀ ùlÀ ù™À ùšÀ ùÕÀ úfÀ úÀ úÉÀ û-À û†À ûÊÀ û×À üXÀ üÓÀ üöÀ ı0À ıgÀ ıpÀ ıvÀ ızÀ ı{À ıÊÀ ıûÀ şÀ şPÀ ş^À şdÀ şµÀ ş×À ÿÀ ÿ:À ÿMÀ ÿSÀ ÿvÀ ÿwÀ ÿ½À À 0À ZÀ aÀ bÀ yÀ …À îÀ
+ÀÀÀWÀ]ÀmÀsÀ»ÀíÀ9À^ÀšÀ½ÀÀÀÀlÀ|À‚À’À˜ÀßÀ*ÀoÀ¬ÀòÀÀKÀnÀŸÀıÀDÀ À¡ÀÀHÀIÀªÀÏÀîÀÀFÀ‡ÀªÀÄÀîÀ		À	%À	0À	SÀ	vÀ	—À	ºÀ
+À
+dÀ
+²À
+ãÀÀVÀyÀ“ÀÓÀîÀÀÀÀÀFÀ‹ÀÀÀœÀÏÀ#À:À©ÀÑÀØÀÀ9ÀqÀ©ÀÃÀÇÀÈÀÔÀÀ[ÀrÀ¶ÀÀtÀœÀ£ÀèÀÀ<ÀtÀÀ¡À¢À À6À|À}À›ÀÅÀùÀÀ2À8ÀKÀ†À®ÀÉÀåÀ ÀDÀ_ÀzÀÀ˜ÀÀÈÀÌÀÍÀ÷À ÀUÀ™ÀÕÀÖÀòÀÀ<À“À¢ÀúÀ^ÀfÀ™ÀŸÀ ÀëÀ:ÀJÀcÀ²À À@À–ÀíÀóÀÀ+À1ÀnÀÂÀÚÀ*À;ÀLÀSÀWÀXÀdÀ¶À·ÀÃÀöÀ$À‹À’À¶ÀºÀ»ÀÇÀ	À,ÀoÀsÀtÀ€À­À®ÀºÀÇÀÀUÀ¬ÀøÀIÀ˜ÀÜÀ À uÀ ãÀ ñÀ!À!-À!UÀ!jÀ!xÀ!¹À!¿À!ÃÀ!ÄÀ!æÀ"À"À"!À"aÀ"À"²À"ÓÀ"ÔÀ"ğÀ#/À#OÀ#uÀ#}À#ƒÀ#‡À#ˆÀ#¨À#ÑÀ#ÒÀ$"À$nÀ${À$À$İÀ$ŞÀ%À%À%fÀ%‰À%ÁÀ%ôÀ&0À&4À&5À&ƒÀ&ÌÀ&ÜÀ&âÀ'-À'WÀ'†À'¹À'½À'íÀ(	À(%À()À(*À(xÀ(½À(ÍÀ(ÓÀ)À)CÀ)XÀ)À)’À)¨À)ÄÀ)ÕÀ)ÙÀ)ÚÀ*(À*yÀ*‰À*À*İÀ+À+!À+YÀ+]À+^À+¬À+ıÀ,À,À,_À,ŠÀ,¥À,İÀ,áÀ,ıÀ-À-0À-4À-5À-pÀ-vÀ-¸À.À.TÀ.£À.©À.ïÀ/6À/KÀ/À/ÎÀ/ÒÀ/ÓÀ0À0À0jÀ0•À0ûÀ1À1‹À1»À1ÈÀ2À2À2FÀ2À2À2ÅÀ2ãÀ3À3,À33À34À3\À3`À3aÀ3œÀ3ŞÀ3ßÀ4À4#À4bÀ4 À4ãÀ4çÀ4èÀ5EÀ5KÀ5¦À5¬À5öÀ6&À6,À6kÀ6ÓÀ6öÀ7cÀ7¥À8*À8À8ÕÀ8ÖÀ8éÀ8şÀ9ZÀ9´À9ÙÀ9âÀ9ïÀ9öÀ9úÀ9ûÀ:7À:=À:|À:¾À:áÀ;À;…À;ÈÀ;íÀ<À<XÀ<eÀ<ÆÀ<ÌÀ<ôÀ<øÀ<ùÀ=@À=VÀ=kÀ=¤À=ôÀ>#À>LÀ>œÀ>¥À>«À>úÀ?À?\À?bÀ?¥À?ÄÀ?åÀ@À@HÀ@wÀ@›À@ÆÀ@ÌÀ@îÀ@ïÀA>ÀAŒÀAÅÀAÌÀBÀBlÀBÀBÀBñÀC5ÀC\ÀC}ÀC£ÀCåÀD	ÀDPÀD^ÀD€ÀD«ÀDÕÀDäÀDğÀEÀE<ÀEgÀEtÀE™ÀE³ÀEÛÀEÿÀF,ÀF_ÀFpÀF~ÀF ÀFÎÀFûÀG
+ÀGÀG;ÀG^ÀGÀG¦ÀG·ÀG¿ÀGÅÀGÆÀHÀHÀHÀHaÀHfÀHµÀIÀILÀIƒÀI„ÀIüÀJIÀJ•ÀJ¢ÀJÛÀKÀKÀK ÀK!ÀKrÀKÀK†ÀK×ÀL ÀLjÀLºÀLÊÀLÏÀM ÀMjÀM¸ÀMìÀN&ÀN+ÀNwÀNÇÀOÀO+ÀORÀOÕÀPÀPÀPÀP8ÀP9ÀP†ÀP‹ÀPÕÀQ ÀQ2ÀQTÀQyÀQ˜ÀQ¹ÀRÀR.ÀRQÀRrÀR•ÀSÀSÀSÀSÀShÀS‡ÀS¼ÀSùÀT3ÀTFÀTeÀT»ÀTÈÀTçÀU=ÀUJÀUSÀUWÀUXÀUdÀUqÀU±ÀV4ÀVHÀVÙÀWÀW4ÀWQÀW ÀWıÀXÀXÀXÀXiÀXìÀY ÀY‘ÀYÉÀZÀZÀZÀZ ÀZ9ÀZrÀZùÀ[|À[À[ÆÀ[şÀ\@À\^À\_À\‚À\ŸÀ\æÀ]À]VÀ]ªÀ]ÍÀ]öÀ^À^IÀ^qÀ^zÀ^À^‚À^ÈÀ_#À_$À_uÀ_vÀ_¯À_èÀ_éÀ`"À`VÀ`À`”À`•À`åÀa7Àa{Àa£Àa¾ÀaàÀbÀb'ÀbIÀbnÀbœÀbÀbñÀcOÀc­ÀcÖÀcÚÀcÛÀd.Àd4ÀdDÀdJÀd™Àd­ÀeÀe8ÀetÀeøÀf6Àf ÀfüÀfıÀg"ÀgPÀgVÀgWÀgvÀgÃÀgÉÀgÊÀgíÀh'Àh-Àh.Àh‚ÀhÉÀhÿÀi\Ài~Ài¼ÀjÀj=ÀjCÀjxÀjÔÀjõÀk4Àk“Àk·Àk½Àk¾ÀlÀlHÀlµÀl¶Àl÷ÀmÀmaÀmƒÀm‰ÀmÉÀméÀn3ÀnVÀn\Àn]Àn„Àn…Àn Àn¤Àn¥ÀnñÀoÀoÀo$Ào*ÀoyÀoÀpÀpHÀpmÀp‹Àp¬ÀpĞÀpñÀqÀq8Àq>Àq|ÀqµÀqÒÀrÀrQÀrÀrêÀsÀs}ÀsŠÀs¹Às¿ÀtÀtÀtÀtxÀt½ÀtñÀuEÀu}Àu«ÀvÀvÀv ÀvuÀv—Àv¾Àw Àw'Àw+Àw,Àw}Àw²Àw¸Àx	Àx"Àx(ÀxqÀxwÀxÈÀyÀyÀy^Ày¦ÀyêÀz>ÀzŠÀzàÀ{À{À{"À{7À{NÀ{gÀ{nÀ{rÀ{sÀ{³À{íÀ{îÀ|!À|[À|aÀ|bÀ|¢À|âÀ|ãÀ}+À}uÀ}˜À}ËÀ}ÑÀ}ÒÀ~À~>À~?À~bÀ~•À~›À~ŸÀ~ À~óÀ~ôÀ\ÀˆÀ¡ÀÔÀ€À€À€uÀ€ŒÀ€®À€ÁÀ€ÔÀ€ÛÀ€üÀ(ÀAÀtÀ¨À±ÀÊÀ‚À‚)À‚>À‚GÀ‚MÀ‚QÀ‚RÀ‚^À‚ŸÀ‚ïÀ‚ıÀƒÀƒ5Àƒ9Àƒ:ÀƒFÀƒ}Àƒ ÀƒÛÀ„À„(À„8À„TÀ„lÀ„À„¸À„ÁÀ„ÎÀ„ñÀ…À…À…SÀ……À…ÕÀ…ÛÀ…ßÀ…àÀ†2À†3À†?À†zÀ†–À†¬À†ÁÀ†ÛÀ†öÀ‡À‡]À‡cÀ‡gÀ‡hÀ‡tÀ‡¹À‡äÀˆ#Àˆ{Àˆ²ÀˆéÀ‰AÀ‰†À‰ùÀŠPÀŠ ÀŠëÀŠïÀŠğÀŠüÀ‹.À‹LÀ‹dÀ‹…À‹À‹ÏÀ‹ÚÀ‹áÀ‹åÀ‹çÀ‹èÀŒÀŒ<ÀŒ`ÀŒ{ÀŒ‹ÀŒŒÀŒ˜ÀŒÙÀŒÚÀŒæÀÀÀÀ;À<ÀnÀ‘ÀÂÀáÀïÀõÀöÀ-ÀFÀGÀ~À–ÀœÀÀ±ÀãÀÀÀÀÀ'À^ÀÀªÀãÀÀ<ÀoÀuÀyÀzÀ†À«ÀÄÀïÀóÀôÀ‘ À‘À‘@À‘TÀ‘XÀ‘YÀ‘eÀ‘rÀ‘ÈÀ‘ÊÀ‘ËÀ’À’3À’7À’†À’×À“&À“wÀ“ÈÀ“ïÀ“óÀ”5À”‚À”ÂÀ•À•6À•:À•HÀ•LÀ•À•ãÀ–*À–pÀ–ÃÀ—À—OÀ—xÀ—~À—ÆÀ˜À˜dÀ˜¤À˜ªÀ˜öÀ™;À™‹À™˜À™ÒÀ™ÓÀš	ÀšÀš_Àš­ÀšøÀšşÀ›OÀ›À›ÖÀœÀœÀœ Àœ\ÀœvÀœ™Àœ¶ÀœãÀÀÀ5À6ÀfÀ€À¨ÀÏÀİÀãÀÀÀÀÀWÀwÀ¥ÀÎÀÜÀâÀŸÀŸÀŸÀŸ ÀŸjÀŸpÀŸ¯ÀŸöÀ ;À qÀ ›À ©À ¯À ÒÀ éÀ íÀ îÀ¡8À¡>À¡|À¡ÀÀ¢À¢6À¢_À¢mÀ¢sÀ¢•À¢¬À¢°À¢±À¢½À£À£4À£]À£œÀ£ªÀ£°À£±À£ÓÀ¤À¤VÀ¤À¤ÉÀ¤óÀ¤úÀ¤ûÀ¥"À¥9À¥qÀ¥ÃÀ¥ÛÀ¥äÀ¥êÀ¥îÀ¥ïÀ¥ûÀ¦6À¦^À¦rÀ¦xÀ¦—À¦ØÀ¦ŞÀ§À§GÀ§ƒÀ§ÇÀ¨
+À¨À¨À¨À¨EÀ¨XÀ¨YÀ¨À¨À¨½À¨İÀ¨ëÀ¨ñÀ©À©"À©&À©'À©fÀ©~À©ƒÀ©ÎÀ©ëÀªÀªÀª1ÀªcÀªdÀªŒÀª¢ÀªÃÀªğÀªşÀ«À«À«À«5À«9À«:À«gÀ«€À«¤À«ÆÀ«ÔÀ«ÚÀ«õÀ¬À¬À¬À¬=À¬cÀ¬†À¬¨À¬¶À¬¼À¬×À¬îÀ¬òÀ¬óÀ­1À­RÀ­~À­¶À­ÄÀ­ÊÀ­ËÀ­ïÀ®À®$À®*À®.À®/À®fÀ®ƒÀ®«À®ÓÀ®áÀ®çÀ¯À¯À¯#À¯$À¯›À¯ìÀ°À°+À°–À°îÀ± À±
+À±À±=À±bÀ±~À±±À±ÀÀ²À²BÀ²JÀ²PÀ²TÀ²UÀ²aÀ²©À²íÀ²îÀ³-À³.À³{À³‰À³À³À³ÎÀ³ÏÀ´À´ À´YÀ´ŸÀ´¸À´ìÀ´íÀµÀµ\ÀµbÀµcÀµ®ÀµÆÀ¶À¶)À¶/À¶0À¶FÀ¶‘À¶ÉÀ¶ĞÀ¶ÔÀ¶ÕÀ¶áÀ·À·DÀ·XÀ·^À·_À·~À·˜À·À·ÇÀ·ùÀ¸5À¸eÀ¸™À¸ÍÀ¹À¹TÀ¹XÀ¹ZÀ¹[À¹¡À¹àÀ¹áÀºÀºÀºÀºHÀº„Àº©Àº¯Àº³Àº´ÀºÀÀºïÀ»+À»SÀ»YÀ»]À»^À»jÀ»²À»îÀ¼!À¼'À¼+À¼,À¼8À¼sÀ¼›À¼¯À¼µÀ½"À½5À½;À½<À½“À½ŞÀ¾À¾aÀ¾vÀ¾~À¾„À¾…À¾—À¾›À¾    €¥  €¿€Ö €Û€ğ€ò*-  Z  „  ¬  Õ  ş  ‚  ‚-  ‚B  ‚_  ‚u  ‚    †1„l†ó€°/// Represents the coordinates of the point in a selection, and the text
+/// direction at that point, relative to top left of the [RenderEditable] that
+/// holds the selection. ‡
+q ‡L‡^9/// Creates a description of a point in a text selection.‡_
+‡e  ‡k‡q   ‡€ˆ€†/// Coordinates of the lower left or lower right corner of the selection,
+/// relative to the top left of the [RenderEditable] object. ˆ!Yˆq8/// Direction of the text at this edge of the selection. Š\>Šp   Š\Š]ˆ!ˆ™  ˆœˆ¤  ˆˆ€‰¤€´‰·   ‰¤‰¥†â†ãŠŸ˜)•EŠŸ/// The consecutive sequence of [TextPosition]s that the caret should move to
+/// when the user navigates the paragraph using the upward arrow key or the
+/// downward arrow key.
+///
+/// {@template flutter.rendering.RenderEditable.verticalArrowKeyMovement}
+/// When the user presses the upward arrow key or the downward arrow key, on
+/// many platforms (macOS for instance), the caret will move to the previous
+/// line or the next line, while maintaining its original horizontal location.
+/// When it encounters a shorter line, the caret moves to the closest horizontal
+/// location within that line, and restores the original horizontal location
+/// when a long enough line is encountered.
+///
+/// Additionally, the caret will move to the beginning of the document if the
+/// upward arrow key is pressed and the caret is already on the first line. If
+/// the downward arrow key is pressed next, the caret will restore its original
+/// horizontal location and move to the second line. Similarly the caret moves
+/// to the end of the document if the downward arrow key is pressed when it's
+/// already on the last line.
+///
+/// Consider a left-aligned paragraph:
+///   aa|
+///   a
+///   aaa
+/// where the caret was initially placed at the end of the first line. Pressing
+/// the downward arrow key once will move the caret to the end of the second
+/// line, and twice the arrow key moves to the third line after the second "a"
+/// on that line. Pressing the downward arrow key again, the caret will move to
+/// the end of the third line (the end of the document). Pressing the upward
+/// arrow key in this state will result in the caret moving to the end of the
+/// second line.
+///
+/// Vertical caret runs are typically interrupted when the layout of the text
+/// changes (including when the text itself changes), or when the selection is
+/// changed by other input events or programmatically (for example, when the
+/// user pressed the left arrow key).
+/// {@endtemplate}
+///
+/// The [movePrevious] method moves the caret location (which is
+/// [VerticalCaretMovementRun.current]) to the previous line, and in case
+/// the caret is already on the first line, the method does nothing and returns
+/// false. Similarly the [moveNext] method moves the caret to the next line, and
+/// returns false if the caret is already on the last line.
+///
+/// The [moveByOffset] method takes a pixel offset from the current position to move
+/// the caret up or down.
+///
+/// If the underlying paragraph's layout changes, [isValid] becomes false and
+/// the [VerticalCaretMovementRun] must not be used. The [isValid] property must
+/// be checked before calling [movePrevious], [moveNext] and [moveByOffset],
+/// or accessing [current]. •„€š•œ•• •¤•ª  •¸•¾  •Ï•Õ  •î•ô  ––   –"–)  –;–?  –O!–\  –u'–  – –µ  –Ã–È –Ó™²g™á 
+šš™òš™ó™øš ššš	–Û‚Ó˜"//// Whether this [VerticalCaretMovementRun] can still continue.
+///
+/// A [VerticalCaretMovementRun] run is valid if the underlying text layout
+/// hasn't changed.
+///
+/// The [current] value and the [movePrevious], [moveNext] and [moveByOffset]
+/// methods must not be accessed when [isValid] is false.   œÑ`œî   œÑœÒš‚¯š=  šUšZ   5XF   56‘¡ı`/// Move back to the previous element.
+///
+/// Returns true and updates [current] if successful.    6‚¡ €Ø/// Move forward or backward by a number of elements determined
+/// by pixel [offset].
+///
+/// If [offset] is negative, move backward; otherwise move forward.
+///
+/// Returns true and updates [current] if successful. ¡-¡5    ¢ÊÀi¦œƒË/// Displays some text in a scrollable container with a potentially blinking
+/// cursor and with gesture recognizers.
+///
+/// This is the renderer for an editable text field. It does not directly
+/// provide affordances for editing the text, but it does handle text selection
+/// and manipulation of the text cursor.
+///
+/// The [text] is displayed, scrolled by the given [offset], aligned according
+/// to [textAlign]. The [maxLines] property controls whether the text displays
+/// on one line or many. The [selection], if it is not collapsed, is painted in
+/// the [selectionColor]. If it _is_ collapsed, then it represents the cursor
+/// position. The cursor is shown while [showCursor] is true. It is painted in
+/// the [cursorColor].
+///
+/// Keyboard handling, IME handling, scrolling, toggling the [showCursor] value
+/// to actually blink the cursor, and other features not mentioned above are the
+/// responsibility of higher layers and not handled by this object. §d“ğ ©”©¢‚/// Creates a render object that implements the visual aspects of a text field.
+///
+/// The [textAlign] argument defaults to [TextAlign.start].
+///
+/// If [showCursor] is not specified, then it defaults to hiding the cursor.
+///
+/// The [maxLines] property can be set to null to remove the restriction on
+/// the number of lines. By default, it is 1, meaning this is a single-line
+/// text field. If it is not null, it must be greater than zero.
+///
+/// Use [ViewportOffset.zero] for the [offset] if there is no need for
+/// scrolling.+©©©¶  ©¿$©×  ©é%©ô  ªª  ª,ª4  ªNªd  ªsªz  ª‡'ª›  ª´%ªÈ  ªßªå  ªöªü  «	«  «#«0  «?«G  «Z€ÿ¬E  ¬_,¬k  ¬‘¬¡  ¬¯¬È  ¬Ó¬Ù  ¬ó¬ù  ­­  ­)&­>  ­U5­e  ­­˜  ­µ­»  ­Ó­Ü  ­ç­ï  ®®  ®®(  ®9!®?  ®`!®h  ®‡®  ®ª@®½  ®ğ=¯  ¯3 ¯:  ¯YF¯_  ¯¥¯±  ¯Å¯Í  ¯á!¯ç  °#°  °1°I  °U(°m  °ƒ°•  ©ÿªª	ªï««Z«[«e¬7«m««ı¬V¬w¬¬‚¬è­­­u­ƒ­„­¬­È­ü®U®v®|®}®¡®Ó®Õ®Ö®ä®å¯¯¯¯'¯(¯z¯€¯Š¯‹¯“¯¯”¯—¯š¯¯õ¯ù¯ú°¥°«°Ì°½°µ°¬°¸°É°À°Ë°Ö°Ü°ı°î°æ°İ°é°ú°ñ°ü±±±Z±—±A±+±±)±"±±%±.±?±8±/±;±D±Y±N±E±Q±e±¡±§±ä²2±»±²±³±¾±ã±Ğ±È±¿±Ë±Ü±Ó±ß±ï²<²B²’²û²y²M²V²w²W²c²m²n²Œ²|²²³³³5³1³³³³)³*³4³?³E³X³R³F³U³b³h³”³~³v³i³y³³³‘³«³³­³¸µH³Ç³Ã³É³á³Ø³ã´³÷´´(´´M´r´5´*´8´B´C´O´Y´Z´`´p´a´t´´‰´‘´ª´¢´º´¾´µ´¬´¸´¼´À´Ù´Ï´Ûµ´ğµµ/µ!µ1µ^µRµkµ`µnµ{µ€µ|µµ‡µ‚µ›µ‘µµ¸µ®µºµÔµËµÖµñµæµó¶¶¶¶+¶¶-¶O¶A¶Q¶x¶f¶z¶³¶—¶µ¶ê¶Ø¶ì····N·:·P··k··©·œ·«·É·¿·Ë·ç·Ü·é¸	·û¸¸*¸ ¸5¸,¸8¸Y¸F¸f¸[¸i<»XN»/// Child render objects »ª3»Æ  À Bå)À Bü  À G˜À G¯  À H¨8À HÁ À HÑÀ HŞÀ HßÀ IGÀ I À I3À IHÀ IIÀ INRÀ Ij À I‰À IÀ IŸÀ J2AÀ JS  À KÈ7À Ké  À M‚	À Oà/// Whether the [handleEvent] will propagate pointer events to selection
+/// handlers.
+///
+/// If this property is true, the [handleEvent] assumes that this renderer
+/// will be notified of input gestures via [handleTapDown], [handleTap],
+/// [handleDoubleTap], and [handleLongPress].
+///
+/// If there are any gesture recognizers in the text span, the [handleEvent]
+/// will still propagate pointer events to those recognizers.
+///
+/// The default value of this property is false. À RSÀ RZ  À S³À Sº  À UÀ U  À Xy3À Y—€ı/// The object that controls the text selection, used by this render object
+/// for implementing cut, copy, and paste keyboard shortcuts.
+///
+/// It will make cut, copy and paste functionality work with the most recently
+/// set [TextSelectionDelegate]. À \OÀ \0 À \LÀ \YÀ \^À \ZÀ \_À \dÀ \`À ^ÍMÀ ^ç À _À _À _À _À _À _À _À uQÀ uc  À us(À u…  À uŸCÀ uÅ  À w
+!À w  À …PÀ …U  À …ÄÀ …Ø  À ˆÀ ˆ$ À ˆ0À ‰=À ‰B À ‰OÀ Š1À Š6 À ŠBÀ ŒÛÀ Œà  À >À C  À  À ¥  À —‹À —š  À ™ÎÀ ™İ  À ›IÀ ›P À ›_À ØÀ à  À ŸÚÀ Ÿß  À ¦	À ¦  À §åÀ §ï  À ¨ªbÀ ©ó+/// The padding applied to text field. Used to determine the bounds when
+/// moving the floating cursor.
+///
+/// Defaults to a padding with left, top and right set to 4, bottom to 5.
+///
+/// See also:
+///
+///  * [FloatingCursorDragState], which explains the floating cursor feature
+///    in detail. À ªŠÀ ª À ª£À ª¬-À ª¾  À ­¦!À ­¬  À ¸zÀ ¸ À ¸”À ¹["À ¹` À ¹pÀ ¹tÀ ¹uÀ º&€°À ºÈw/// Collected during [describeSemanticsConfiguration], used by
+/// [assembleSemanticsNode] and [_combineSemanticsInfo]. À »ß4À ¼  ÀÀ„  À!ÆÀ!à  À!è*À"  À#ŠÀ#’  À#ª%À#²  ÀIN3ÀIk  ÀPÀP'  Àa}$Àa„ Àa–ÀaœÀaÀa¥Àa­  ÀaÀÀaÅ ÀaÚÀaâÀaç ÀaüÀb Àb
+ Àb Àb)Àb. ÀbBÀbK!ÀbP ÀbgÀbp*Àbx  À~¢OÀ~Á À~×À~âÀ~îÀ~ãÀ~ïÀ~ğÀ…âNÀ† À†À†À†-À† À†.À†/^À AtnÀ Bº/// The [RenderEditablePainter] to use for painting above this
+/// [RenderEditable]'s text content.
+///
+/// The new [RenderEditablePainter] will replace the previously specified
+/// foreground painter, and schedule a repaint if the new painter's
+/// `shouldRepaint` method returns true.   À C€¨À C  À C(!À C@   À F?VÀ G/// Sets the [RenderEditablePainter] to use for painting beneath this
+/// [RenderEditable]'s text content.
+///
+/// The new [RenderEditablePainter] will replace the previously specified
+/// painter, and schedule a repaint if the new painter's `shouldRepaint`
+/// method returns true.   À G»€ŠÀ G¿  À GÇ!À Gß   À I¥€ŠÀ IÉ    À KYlÀ K}    À O+xÀ Om'/// {@macro dart.ui.textHeightBehavior}   À O¦€ÃÀ Oª  À O½À OÒ   À Pm|À P»8/// {@macro flutter.painting.textPainter.textWidthBasis}   À Pì€²À Pğ  À PÿÀ Q   À Q¢€®À R*v/// The pixel ratio of the current device.
+///
+/// Should be obtained by querying MediaQuery for the devicePixelRatio.   À Ro€—À Rs  À R„À RŒ   À S
+€¦À S†j/// Character used for obscuring text if [obscureText] is true.
+///
+/// Must have a length of exactly one.   À SÑ€ÈÀ SÕ  À SèÀ Sğ   À ThÀ Té@/// Whether to hide the text being edited (e.g., for passwords).   À U€³À U!  À U-
+À U3   À UÔ€äÀ Vy€ˆ/// Controls how tall the selection highlight boxes are computed to be.
+///
+/// See [ui.BoxHeightStyle] for details on available styles.   À V»kÀ V¿  À VÔÀ Vç   À W*€àÀ WÍ€‡/// Controls how wide the selection highlight boxes are computed to be.
+///
+/// See [ui.BoxWidthStyle] for details on available styles.   À XhÀ X  À X%À X7   À Y±‚bÀ [İı/// Track whether position of the start of the selected text is within the viewport.
+///
+/// For example, if the text contains "Hello World", and the user selects
+/// "Hello", then scrolls so only "World" is visible, this will become false.
+/// If the user scrolls back so that the "H" is visible again, this will
+/// become true.
+///
+/// This bool indicates whether the text is scrolled so that the handle is
+/// inside the text field viewport, as opposed to whether it is actually
+/// visible on the screen.   À \j‚`À ^˜ÿ/// Track whether position of the end of the selected text is within the viewport.
+///
+/// For example, if the text contains "Hello World", and the user selects
+/// "World", then scrolls so only "Hello" is visible, this will become
+/// 'false'. If the user scrolls back so that the "d" is visible again, this
+/// will become 'true'.
+///
+/// This bool indicates whether the text is scrolled so that the handle is
+/// inside the text field viewport, as opposed to whether it is actually
+/// visible on the screen.   À sf.À tp€ô/// Returns a plain text version of the text in [TextPainter].
+///
+/// If [obscureText] is true, returns the obscured text. See
+/// [obscureText] and [obscuringCharacter].
+/// In order to get the styled text as an [InlineSpan] tree, use [text].   À t˜€¶À u4€…/// The text to paint in the form of a tree of [InlineSpan]s.
+///
+/// In order to get the plain text representation, use [plainText].   À uæ À uê  À uïÀ uü   À w/‚À w?    À yOeÀ y0/// How the text should be aligned horizontally.   À y·€À y»  À yÅÀ yĞ   À zYƒWÀ }ƒ‚3/// The directionality of the text.
+///
+/// This decides how the [TextAlign.start], [TextAlign.end], and
+/// [TextAlign.justify] values of [textAlign] are interpreted.
+///
+/// This is also used to disambiguate how to render bidirectional text. For
+/// example, if the [text] is an English phrase followed by a Hebrew phrase,
+/// in a [TextDirection.ltr] context the English phrase will be on the left
+/// and the Hebrew phrase to its right, while in a [TextDirection.rtl]
+/// context, the English phrase will be on the right and the Hebrew phrase on
+/// its left.   À }³€ÎÀ }·  À }ÅÀ }Ô   À ~…‚
+À €qÍ/// Used by this renderer's internal [TextPainter] to select a locale-specific
+/// font.
+///
+/// In some cases the same Unicode character may be rendered differently depending
+/// on the locale. For example the 'éª¨' character is rendered differently in
+/// the Chinese and Japanese locales. In these cases the [locale] may be used
+/// to select a locale-specific font.
+///
+/// If this value is null, a system-dependent algorithm is used to select
+/// the font.   À €’€“À €–  À €À €¦   À )€ À £e/// The [StrutStyle] used by the renderer's internal [TextPainter] to
+/// determine the strut to use.   À Ì€£À Ğ  À ÛÀ è   À ‚sdÀ ‚¯./// The color to use when painting the cursor.   À ‚ÚIÀ ‚Ş  À ‚êÀ ‚ò   À ƒ'ÄÀ „®e/// The color to use when painting the cursor aligned to the text while
+/// rendering the floating cursor.
+///
+/// Typically this would be set to [CupertinoColors.inactiveGray].
+///
+/// If this is null, the background cursor is not painted.
+///
+/// See also:
+///
+///  * [FloatingCursorDragState], which explains the floating cursor feature
+///    in detail.   À „î^À „ò  À …À …   À …lUÀ …§ /// Whether to paint the cursor.   À …çÀ …ë  À …öÀ †   À ‡ÌPÀ ˆ./// Whether the editable is currently focused.   À ˆ9€‡À ˆ=  À ˆF
+À ˆL   À ˆÄvÀ ‰"R/// Whether this rendering object will take a full line regardless the text width.   À ‰X€À ‰\  À ‰f
+À ‰l   À ‰İQÀ Š//// Whether this rendering object is read only.   À ŠK€‡À ŠO  À ŠX
+À Š^   À ŠÖ‚À ŒÂÎ/// The maximum number of lines for the text to span, wrapping if necessary.
+///
+/// If this is 1 (the default), the text will not wrap, but will extend
+/// indefinitely instead.
+///
+/// If this is null, there is no limit to the number of lines.
+///
+/// When this is not null, the intrinsic height of the render object is the
+/// height of one line of text multiplied by this value. In other words, this
+/// also controls the height of the actual editing widget.   À ŒíöÀ DP/// The value may be null. If it is not null, then it must be greater than zero. À M
+À S   À çTÀ %2/// {@macro flutter.widgets.editableText.minLines}   À P€øÀ §P/// The value may be null. If it is not null, then it must be greater than zero. À °
+À ¶   À LQÀ ‰1/// {@macro flutter.widgets.editableText.expands}   À ±zÀ µ  À ½
+À Ã   À ‘/rÀ ‘n1/// The color to use when painting the selection.   À ‘¤TÀ ‘¨  À ‘·À ‘¿   À ‘ü‚*À “ö/// Deprecated. Will be removed in a future version of Flutter. Use
+/// [textScaler] instead.
+///
+/// The number of font pixels for each logical pixel.
+///
+/// For example, if the text scale factor is 1.5, text will be 50% larger than
+/// the specified font size.  À “À “À “À “çÀ “#À “BÀ “¯À ”)+À •  À •À •  À ”)À ”*À ”4À ”şÀ ”:À ”YÀ ”ÆÀ •XlÀ •4/// {@macro flutter.painting.textPainter.textScaler}   À •Ç€¢À •Ë  À •ÖÀ •â   À –mÀ —p€ã/// The region of text that is selected, if any.
+///
+/// The caret position is represented by a collapsed selection.
+///
+/// If [selection] is null, there is no selection and attempts to
+/// manipulate the selection will throw.   À —¨€ÚÀ —¬  À —¶À —Æ   À ˜†EÀ ™¹/// The offset at which the text should be painted.
+///
+/// If the text content is larger than the editable line itself, the editable
+/// line clips the text. This property controls which part of the text is
+/// visible by shifting the text by the given offset before clipping.   À ™èÀ ™ì  À ™óÀ š   À šûKÀ ›*!/// How thick the cursor will be.   À ›f€‰À ›j  À ›vÀ ›~   À ›óâÀ  )/// How tall the cursor will be.
+///
+/// This can be null, in which case the getter will actually return [preferredLineHeight].
+///
+/// Setting this to itself fixes the value to the current [preferredLineHeight]. Setting
+/// this to null returns the behavior of deferring to [preferredLineHeight].   À ñ€À õ  À À    À ‚UÀ Ÿ­/// {@template flutter.rendering.RenderEditable.paintCursorAboveText}
+/// If the cursor should be painted on top of the text or underneath it.
+///
+/// By default, the cursor should be painted on top for iOS platforms and
+/// underneath for Android platforms.
+/// {@endtemplate}   À Ÿô©À Ÿø  À  
+À     À ¡¡‚À £{¾/// {@template flutter.rendering.RenderEditable.cursorOffset}
+/// The offset that is used, in pixels, when painting the cursor on screen.
+///
+/// By default, the cursor position should be set to an offset of
+/// (-[cursorWidth] * 0.5, 0.0) on iOS platforms and (0, 0) on Android
+/// platforms. The origin from where the offset is applied to is the arbitrary
+/// location where the cursor ends up being rendered from by default.
+/// {@endtemplate}   À £©LÀ £­  À £ºÀ £Â   À £ù€¥À ¤sg/// How rounded the corners of the cursor should be.
+///
+/// A null value is the same as [Radius.zero].   À ¤¡MÀ ¤¥  À ¤²À ¤»   À ¤òÀ ¥Ø€Ï/// The [LayerLink] of start selection handle.
+///
+/// [RenderEditable] is responsible for calculating the [Offset] of this
+/// [LayerLink], which will be used as [CompositedTransformTarget] of start handle.   À ¦,€¦À ¦0  À ¦EÀ ¦P   À ¦ÖÀ §¸€Ë/// The [LayerLink] of end selection handle.
+///
+/// [RenderEditable] is responsible for calculating the [Offset] of this
+/// [LayerLink], which will be used as [CompositedTransformTarget] of end handle.   À ¨€ À ¨
+  À ¨À ¨(   À ªvÀ ªaD/// Returns true if the floating cursor is visible, false otherwise.   À ªŞ‚ÅÀ ­i‚f/// Whether to allow the user to change the selection.
+///
+/// Since [RenderEditable] does not handle selection manipulation
+/// itself, this actually only affects whether the accessibility
+/// hints provided to the system (via
+/// [describeSemanticsConfiguration]) will enable selection
+/// manipulation. It's the responsibility of this object's owner
+/// to provide selection manipulation affordances.
+///
+/// This field is used by [selectionEnabled] (which then controls
+/// the accessibility hints mentioned above). When null,
+/// [obscureText] is used to determine the value of
+/// [selectionEnabled] instead.   À ­Ë€ÕÀ ­Ï  À ­êÀ ­ñ   À ®¤„nÀ ²Åƒï/// Whether interactive selection are enabled based on the values of
+/// [enableInteractiveSelection] and [obscureText].
+///
+/// Since [RenderEditable] does not handle selection manipulation
+/// itself, this actually only affects whether the accessibility
+/// hints provided to the system (via
+/// [describeSemanticsConfiguration]) will enable selection
+/// manipulation. It's the responsibility of this object's owner
+/// to provide selection manipulation affordances.
+///
+/// By default, [enableInteractiveSelection] is null, [obscureText] is false,
+/// and this getter returns true.
+///
+/// If [enableInteractiveSelection] is null and [obscureText] is true, then this
+/// getter returns false. This is the common case for password fields.
+///
+/// If [enableInteractiveSelection] is non-null then its value is
+/// returned. An application might [enableInteractiveSelection] to
+/// true to enable interactive selection for a password field, or to
+/// false to unconditionally disable interactive selection.   À ³ÀÀ ´—€‚/// The color used to paint the prompt rectangle.
+///
+/// The prompt rectangle will only be requested on non-web iOS applications.   À ´ÙfÀ ´İ  À ´íÀ ´õ   À ·YÀ ¸S€ä/// The maximum amount the text is allowed to scroll.
+///
+/// This value is only valid after layout and can change as additional
+/// text is entered or removed in order to accommodate expanding when
+/// [expands] is set to true.   À ¸š4À ¸¥    À ¸Ò€†À ¹:X/// {@macro flutter.material.Material.clipBehavior}
+///
+/// Defaults to [Clip.hardEdge].   À ¹€¡À ¹…  À ¹’
+À ¹˜   À ò¬'À òµ    À ò×IÀ òà    À ó$€´À ó/    À óÜ€«À óç    À ö5SÀ ö>    À¤€×ÀC€/// An estimate of the height of a line in the text. See [TextPainter.preferredLineHeight].
+/// This does not require the layout to be updated.   À#ÔÀ$€µ/// {@template flutter.rendering.RenderEditable.lastSecondaryTapDownPosition}
+/// The position of the most recent secondary tap down event on this text
+/// input.
+/// {@endtemplate}   À3czÀ3¯8/// {@macro flutter.painting.TextPainter.wordBoundaries}   R»â‚Ê»ó   »â»ã¾°‚À¾µ  ¾Î!¾æ   À C¾‚}À CÃ  À CÒ!À Cê   À Jw€ŞÀ J—    À LÀ L#    À _À _l=/// Returns the TextPosition above or below the given offset. À _…À _“  À _œÀ _¤   À `ÏÊÀ a+?/// {@macro flutter.services.TextLayoutMetrics.getLineAtOffset} À a;À aI  À aÀ aÀ b€±À bï9/// {@macro flutter.painting.TextPainter.getWordBoundary} À bÿÀ c  À bÙÀ bÚÀ cR‚+À c²D/// {@macro flutter.services.TextLayoutMetrics.getTextPositionAbove} À cÇÀ cÕ  À c™À cšÀ e‚*À eáD/// {@macro flutter.services.TextLayoutMetrics.getTextPositionBelow} À eöÀ f  À eÈÀ eÉÀ gÌ…gÀ gÑ  À góÀ gû   À m7€À m<  À mQÀ mc  À mlÀ mƒ   À mÙ„%À mŞ  À mìÀ mû  À n	À n    À r€éÀ r   À rÀ rÀ rïsÀ s    À rïÀ rğÀ ‡zNÀ ‡    À µC‚À ¶êD/// Dismisses the currently displayed prompt rectangle and displays a new prompt rectangle
+/// over [newRange] in the given color [promptRectColor].
+///
+/// The prompt rectangle will only be requested on non-web iOS applications.
+///
+/// When set to null, the currently displayed prompt rectangle (if any) will be dismissed. À ¶ıÀ ·	   À ¼ƒÀ ½*€ù/// Returns a list of rects that bound the given selection, and the text
+/// direction. The text direction is used by the engine to calculate
+/// the closest position to a given point.
+///
+/// See [TextPainter.getBoxesForSelection] for more details. À ½?À ½N   À ¿;‹ZÀ ¿L  À ¿kÀ ¿ƒ  À ¿;À ¿<À Ê™€ÿÀ Ê  À Ê­À Êµ   À Ëœ’EÀ Ë­  À ËÃÀ ËÒ  À Ë×À Ëï  À Ëö À Ì  À ËœÀ ËÀ İå€¼À İó  À Ş
+À Ş   À ßsuÀ ßx  À ßŒÀ ß›   À ßìÈÀ ßñ  À àÀ à   À á¸ÊÀ á½  À áâÀ áè   À ã†‚À ã‹  À ãªÀ ã°   À å£‚5À å¨  À åÈÀ åÎ   À çÜGÀ çç  À çô
+À çù   À é'iÀ é2  À éC
+À éH   À ëÌ€üÀ ëÑ  À ëáÀ ëì   À ìÌâÀ ìİ  À ìäÀ ìó  À ìÌÀ ìÍÀ î²À îÃ   À î²À î³À ïÂgÀ ïÓ   À ïÂÀ ïÃÀ ñ-{À ñ>  À ñLÀ ña  À ñ-À ñ.À ô‹À ô’  À ô¦À ô¬   À öŒ†íÀ ù‚V/// Returns the local coordinates of the endpoints of the given selection.
+///
+/// If the selection is collapsed (and therefore occupies a single point), the
+/// returned list is of length one. Otherwise, the selection is not collapsed
+/// and the returned list is of length two. In this case, however, the two
+/// points might actually be co-located (e.g., because of a bidirectional
+/// selection that contains some text but whose ends meet in the middle).
+///
+/// See also:
+///
+///  * [getLocalRectForCaret], which is the equivalent but for
+///    a [TextPosition] rather than a [TextSelection]. À ù-À ù<   À ı}ƒÀ şßK/// Returns the smallest [Rect], in the local coordinate system, that covers
+/// the text within the [TextRange] specified.
+///
+/// This method is used to calculate the approximate position of the IME bar
+/// on iOS.
+///
+/// Returns null if [TextRange.isValid] is false for the given `range`, or the
+/// given `range` is collapsed. À şøÀ ÿ   À‚Àm>/// Returns the position in the text for the given global coordinate.
+///
+/// See also:
+///
+///  * [getLocalRectForCaret], which is the reverse operation, taking
+///    a [TextPosition] and returning a [Rect].
+///  * [TextPainter.getPositionForOffset], which is the equivalent method
+///    for a [TextPainter] object. ÀÀ‰   À ‰nÀÜ/// Returns the [Rect] in local coordinates for the caret at the given text
+/// position.
+///
+/// See also:
+///
+///  * [getPositionForPoint], which is the reverse operation, taking
+///    an [Offset] in global coordinates and returning a [TextPosition].
+///  * [getEndpointsForSelection], which is the equivalent but for
+///    a selection rather than a particular text position.
+///  * [TextPainter.getOffsetForCaret], the equivalent method for a
+///    [TextPainter] object. À-À;   À’‚4À¥  À¾ÀÆ  À’À“ÀÊ‚ÖÀİ  ÀöÀş  ÀÊÀËÀ‚.À¡  À¶À¾   ÀÏ†‡ÀÖ  ÀçÀï   ÀZ[Àm  À‡À  ÀZÀ[À¹ ÀÌ  ÀæÀî  À¹ÀºÀ½€µÀĞ  ÀğÀş  À½À¾Àv6À‡  À“À›  ÀvÀwÀ°„ÀÎ  ÀŞÀğ  ÀùÀ
+  À°À±À¼À½À"oÀ"(  À"4À"B  À"HÀ"Y  À"À"À$àSÀ%€¢/// Tracks the position of a secondary tap event.
+///
+/// Should be called before attempting to change the selection based on the
+/// position of a secondary tap. À%§À%·   À&7…À'^/// If [ignorePointer] is false (the default) then this method is called by
+/// the internal gesture recognizer's [TapGestureRecognizer.onTapDown]
+/// callback.
+///
+/// When [ignorePointer] is true, an ancestor widget must respond to tap
+/// down events by calling this method. À'lÀ'|   À'¿iÀ'Ä  À'ÓÀ'ã   À(,eÀ)J/// If [ignorePointer] is false (the default) then this method is called by
+/// the internal gesture recognizer's [TapGestureRecognizer.onTap]
+/// callback.
+///
+/// When [ignorePointer] is true, an ancestor widget must respond to tap
+/// events by calling this method.   À)”DÀ)™    À)Ü€À+/// If [ignorePointer] is false (the default) then this method is called by
+/// the internal gesture recognizer's [DoubleTapGestureRecognizer.onDoubleTap]
+/// callback.
+///
+/// When [ignorePointer] is true, an ancestor widget must respond to double
+/// tap events by calling this method.   À+`€À,‘/// If [ignorePointer] is false (the default) then this method is called by
+/// the internal gesture recognizer's [LongPressGestureRecognizer.onLongPress]
+/// callback.
+///
+/// When [ignorePointer] is true, an ancestor widget must respond to long
+/// press events by calling this method.   À,ãPÀ,è    À-7‚šÀ/R‚/// Move selection to the location of the last tap down.
+///
+/// {@template flutter.rendering.RenderEditable.selectPosition}
+/// This method is mainly used to translate user inputs in global positions
+/// into a [TextSelection]. When used in conjunction with a [EditableText],
+/// the selection change is fed back into [TextEditingController.selection].
+///
+/// If you have a [TextEditingController], it's generally easier to
+/// programmatically manipulate its `value` or `selection` directly.
+/// {@endtemplate} À/c$À/ƒ   À/ÕƒŠÀ0œ€¹/// Select text between the global positions [from] and [to].
+///
+/// [from] corresponds to the [TextSelection.baseOffset], and [to] corresponds
+/// to the [TextSelection.extentOffset]. À0¯À0À  À0Å
+À0Î  À0Ñ$À0ñ   À3áÀ4i|/// Select a word around the location of the last tap down.
+///
+/// {@macro flutter.rendering.RenderEditable.selectPosition} À4v$À4–   À4ê…À6rr/// Selects the set words of a paragraph that intersect a given range of global positions.
+///
+/// The set of words selected are not strictly bounded by the range of global positions.
+///
+/// The first and last endpoints of the selection will always be at the
+/// beginning and end of a word respectively.
+///
+/// {@macro flutter.rendering.RenderEditable.selectPosition} À6‡À6˜  À6
+À6¦  À6©$À6É   À9ı‚úÀ:ƒz/// Move the selection to the beginning or end of a word.
+///
+/// {@macro flutter.rendering.RenderEditable.selectPosition} À:”$À:´   À<û‹À={X/// Returns a [TextSelection] that encompasses the word at the given
+/// [TextPosition]. À=‹À=™  À=XÀ=YÀI†™ÀI©  ÀI¾ÀIÆ  ÀIÕ!ÀIİ  ÀIĞÀIçÀIíÀIîÀO-€ìÀO2    ÀP‚‹ÀQ9€ /// On iOS, the cursor is taller than the cursor on Android. The height
+/// of the cursor for iOS is approximate and obtained through an eyeball
+/// comparison.   ÀS‰ÍÀS  ÀS¥ÀS­   ÀUZ‚¦ÀUx  ÀU‰$ÀU£  ÀUZÀU[ÀUfÀUgÀX‚ÀX  ÀX*$ÀXD  ÀXPÀX^  ÀXÀXÀZ†}ÀZ'   ÀZÀZÀbŸ:Àb­  ÀbÌÀbÔ  ÀbÛÀbá   ÀcİŠÆÀd¶€Å/// Returns the position within the text field closest to the raw cursor offset.
+///
+/// See also:
+///
+///  * [FloatingCursorDragState], which explains the floating cursor feature
+///    in detail. ÀdÛÀdã  ÀdôÀdû   Àn§…lÀo”€Ù/// Sets the screen position of the floating cursor and the text position
+/// closest to the cursor.
+///
+/// See also:
+///
+///  * [FloatingCursorDragState], which explains the floating cursor feature
+///    in detail. Ào¦Ào¿  ÀoÅÀoÍ  ÀoÛÀoé  ÀoüÀp   ÀtƒÀt-  Àt<ÀtJ  ÀtXÀtn   Àw.„CÀz‚¡/// Starts a [VerticalCaretMovementRun] at the given location in the text, for
+/// handling consecutive vertical caret movements.
+///
+/// This can be used to handle consecutive upward/downward arrow key movements
+/// in an input field.
+///
+/// {@macro flutter.rendering.RenderEditable.verticalArrowKeyMovement}
+///
+/// The [VerticalCaretMovementRun.isValid] property indicates whether the text
+/// layout has changed and the vertical caret run is invalidated.
+///
+/// The caller should typically discard a [VerticalCaretMovementRun] when
+/// its [VerticalCaretMovementRun.isValid] becomes false, or on other
+/// occasions where the vertical caret run should be interrupted. Àz Àz.   À{uƒ)À{z  À{‰À{š  À{¢À{ª   À~öƒZÀ~û  ÀÀ  À'"ÀA  ÀKÀS   À‚T€äÀ‚e  À‚yÀ‚„  À‚ŠÀ‚“  À‚TÀ‚UÀƒ<‚¢ÀƒM  ÀƒSÀƒd  ÀƒlÀƒt  Àƒ<Àƒ=À†51À†G  À†dÀ†r  À†5À†6À‡jƒ„À‡{  À‡&À‡¬  À‡jÀ‡kÀŠò€òÀ‹   ÀŠòÀŠó À‹è…áÀ‹î  ÀŒk ÀŒÀŒ9 ÀŒ@ÀŒX  ÀŒpÀŒgÀŒrÀŒ‚ÀŒ‡ÀŒˆÀpÀ‡  ÀŒJÀŒ®   ÀŒÀŒÀŒÜ/ÀŒñ   ÀŒÜÀŒİÀ+À$   ÀÀÀ>/ÀY    À“†À—  ÀŸÀ·   À[À.  À4ÀE  ÀMÀU  ÀÀÀ|vÀ  À”À£  À|À}ÀöaÀ‘   ÀöÀ÷À‘[lÀ‘y  À‘Š$À‘¤  À‘[À‘\À‘gÀ‘h À‘ËŠSÀ–Ò„÷/// An interface that paints within a [RenderEditable]'s bounds, above or
+/// beneath its text content.
+///
+/// This painter is typically used for painting auxiliary content that depends
+/// on text layout metrics (for instance, for painting carets and text highlight
+/// blocks). It can paint independently from its [RenderEditable], allowing it
+/// to repaint without triggering a repaint on the entire [RenderEditable] stack
+/// when only auxiliary content changes (e.g. a blinking cursor) are present. It
+/// will be scheduled to repaint when:
+///
+///  * It's assigned to a new [RenderEditable] (replacing a prior
+///    [RenderEditablePainter]) and the [shouldRepaint] method returns true.
+///  * Any of the [RenderEditable]s it is attached to repaints.
+///  * The [notifyListeners] method is called, which typically happens when the
+///    painter's attributes change.
+///
+/// See also:
+///
+///  * [RenderEditable.foregroundPainter], which takes a [RenderEditablePainter]
+///    and sets it as the foreground painter of the [RenderEditable].
+///  * [RenderEditable.painter], which takes a [RenderEditablePainter]
+///    and sets it as the background painter of the [RenderEditable].
+///  * [CustomPainter], a similar class which paints within a [RenderCustomPaint].    À—‚ÎÀ™Ÿ‚~/// Determines whether repaint is needed when a new [RenderEditablePainter]
+/// is provided to a [RenderEditable].
+///
+/// If the new instance represents different information than the old
+/// instance, then the method should return true, otherwise it should return
+/// false. When [oldDelegate] is null, this method should always return true
+/// unless the new painter initially does not paint anything.
+///
+/// If the method returns false, then the [paint] call might be optimized
+/// away. However, the [paint] method will get called whenever the
+/// [RenderEditable]s it attaches to repaint, even if [shouldRepaint] returns
+/// false. À™­"À™Å   À™Õ‚GÀ›İğ/// Paints within the bounds of a [RenderEditable].
+///
+/// The given [Canvas] has the same coordinate space as the [RenderEditable],
+/// which may be different from the coordinate space the [RenderEditable]'s
+/// [TextPainter] uses, when the text moves inside the [RenderEditable].
+///
+/// Paint operations performed outside of the region defined by the [canvas]'s
+/// origin and the [size] parameter may get clipped, when [RenderEditable]'s
+/// [RenderEditable.clipBehavior] is not [Clip.none]. À›ãÀ›ë  À›ò	À›ø  À›ıÀœ    Àœ ‹ïÀœ&  Àœ^€­ Àœ^Àœs Àœ|Àœˆ  ÀœŸÀœ§  ÀœÏÀœ½ÀœÑÀœúÀœêÀœüÀ$À À,À1À2ÀhÀo  ÀYÀd  ÀŸøAÀ 
+ À "À $À %À 3À 4À¡Â>À¡Ó À¡êÀ¡ìÀ¡íÀ¡úÀ¡ûÀ8-ÀC    À‚€›À†  À•À   À!5À0    Ày€¥À}  ÀÀš   ÀŸ"€ÓÀŸÇ€ˆ/// Controls how tall the selection highlight boxes are computed to be.
+///
+/// See [ui.BoxHeightStyle] for details on available styles.   À =€¯À A  À VÀ i   À ğ€ÏÀ¡“€‡/// Controls how wide the selection highlight boxes are computed to be.
+///
+/// See [ui.BoxWidthStyle] for details on available styles.   À¢€«À¢  À¢À¢.   À¢³ƒ:À¢Ä  À¢ÊÀ¢Ò  À¢Ù	À¢ß  À¢äÀ¢ô  À¢³À¢´À¥ñ‚À¦  À¦"À¦(  À¥ñÀ¥ò À¨‘HÀ¨  À¨G À¨GÀ¨T   	À¨ƒÀ¨ˆ À¨—À©íÀ©ò ÀªÀª Àª Àª(Àª-Àª.Àª3.ÀªD ÀªZÀª_Àª`ÀªÀª•  À«iÀ«q  À¬?"À¬F À¬VÀ¬\À¬]À­3À­:  À®hÀ®n  À¨[%À¨d    À¨Ÿ€†À¨£  À¨¯
+À¨µ   Àªf%Àªq    Àª¤€”Àª¨  Àª³Àª»   À«<*À«H    À«‚€À«†  À«“À«œ   À¬)À¬    À¬e€ŒÀ¬i  À¬vÀ¬~   À¬õ;À­     À­T€ÙÀ­X  À­nÀ­v   À®14À®;    À®…€À®‰  À®œÀ®£   À¯&ƒ-À¯+  À¯>À¯F  À¯MÀ¯]  À¯lÀ¯s  À¯~À¯Œ   À²W„|À²h  À²nÀ²v  À²}	À²ƒ  À²ˆÀ²˜  À²WÀ²XÀ¶×‚€À¶è  À¶ö"À·  À¶×À¶Ø À¹[…AÀ¹a  À¹£< À¹£À¹Â À¹ÅÀ¹Ô   À¹ã*Àº   Àº€ Àº#  Àº/Àº=  ÀºÀºÀº¶€¦ÀºÇ  ÀºÖÀºä  Àº¶Àº·À»`€ÊÀ»q  À»wÀ»  À»†	À»Œ  À»‘À»¡  À»`À»aÀ¼.‚lÀ¼?  À¼M"À¼e  À¼.À¼/          ‚®‚» ‚È‚×&‚ä ‚úƒ‹dƒœ ƒ»ƒÅƒÆƒÏƒîƒÚƒĞƒÜƒéƒáƒë„):„6 „O„U„V„^„b„_…İQ…ê †(†#†*  ‹Ù <€†€¤€¥€¿€Û,-Z„¬Õış‚‚-‚B‚_‚u‚‚­‚®‚×ƒ	ƒ
+ƒXƒ‹ƒñƒò„)„e„f„Å……T…”…İ†0†1†z†É†â†í‡‡D‡|‡}‡ÉˆˆˆˆZˆ|ˆ}ˆ‰ˆ¬ˆÎˆáˆç‰‰'‰-‰T‰t‰‰¡‰¢‰®‰Ä‰äŠŠ6ŠNŠUŠYŠZŠfŠ›ŠœŠŠŸŠí‹9‹Q‹U‹Ÿ‹ìŒ9ŒˆŒÙ&RV¤óC’àş)3;E•â1Î‘‘-‘1‘‘Î’’A’T’X’™’ã“3“„“À“Ä””3”7”…”Ö•#•?•‚• •´•Ë•ê–––– –9–M–r–s––À–Á–Ù——!—o—…—‹—Û˜˜,˜A˜U˜[˜¸™™D™x™™–™«™¯™°šššgš|š™šğ››/›5›]›^›¹œœŠœµœÊœÎœÏœÛœø.23?Sh›¯µ+NyŠ¸¾öŸŸ#Ÿ@ŸTŸZŸ¹ŸĞŸó  / 3 4 v  • Û á¡¡>¡o¡ˆ¡Æ¡á¡ò¡ü¢¢¢O¢n¢¢‰¢‘¢—¢Ã¢Ç¢É¢Ê££@£D££Ş¤¤¤Z¤©¤ù¥G¥–¥­¥±¦¦R¦–§b§´§º§ø§ş¨M¨S¨¡¨ï©2©8©©’©¥©»©åªª(ªJªoªƒª°ªÛªò«««;«V«g«ˆ«÷¬3¬9¬[¬¬«¬Ï¬ï­
+­%­Q­Œ­±­Ï­ã®®®5®\®ƒ®¦®ì¯/¯U¯¡¯Á¯İ°°-°Q°°°Ï± ±±\±±š±©±æ²+²5²D²”²ô²ş³8³[³—³º³Ï³î´´€´™´Æ´çµµAµKµŠµ§µÄµßµş¶¶:¶_¶¶Ñ¶ş·3·d·•·¸·Õ·ô¸¸?¸p¸§¸¨¸ß¹¹V¹—¹˜¹Ûº º!ºMº|º«ºìºí»»;»Q»U»V»q»¨»ß»à»ì»ÿ¼%¼M¼q¼™¼½¼Ş½½6½_½†½²½Ó½ğ¾¾1¾O¾l¾¾”¾©¾­¾®¾ó¿C¿f¿±¿Ö¿ë¿õ¿öÀ @!À @˜À @ÂÀ @úÀ AÀ ABÀ AHÀ AmÀ AqÀ ArÀ A³À AÚÀ AàÀ B,À BrÀ BÀ BãÀ CÀ CMÀ CyÀ C‡À CÀ C·À C»À C¼À C÷À DGÀ D`À DÊÀ DËÀ DöÀ EmÀ E—À EÏÀ EÜÀ FÀ FÀ F8À F<À F=À F…À F¬À F²À FşÀ GIÀ GdÀ G–À G¹À GìÀ HÀ HÀ H"À HBÀ HFÀ HGÀ H\À H¦À HâÀ HãÀ IÀ ILÀ I¢À I£À J0À JuÀ J¼À JèÀ KÀ KBÀ KKÀ KRÀ KVÀ KWÀ KÆÀ LÀ L>À LjÀ L“À L¹À LÔÀ MÀ MÀ MÀ MÀ MÀ MfÀ MvÀ M|À MÉÀ NÀ NDÀ NJÀ N™À NÙÀ NßÀ OÀ O(À O)À OSÀ O¤À OÚÀ PÀ PÀ P"À POÀ PfÀ PjÀ PkÀ P¦À PêÀ QÀ QGÀ QUÀ Q[À Q„À Q›À QŸÀ Q À QÍÀ QÓÀ RÀ RQÀ RmÀ R”À R¹À RÇÀ RÍÀ RìÀ SÀ SÀ SÀ SJÀ SPÀ SyÀ S±À SÏÀ SøÀ T À T.À T4À T^À TÀ T–À TšÀ T›À TŞÀ UÀ UÀ U;À U\À UjÀ UpÀ UŠÀ U­À UÍÀ UÑÀ UÒÀ VÀ V"À VaÀ V¹À VïÀ W#À W'À W(À WrÀ WxÀ W¶À XÀ X?À XrÀ XvÀ XwÀ XÅÀ YÀ YÀ Y\À YÀ Y®À Y¯À ZÀ ZÀ ZXÀ Z¨À ZóÀ [À [À [YÀ [¤À [ÁÀ \À \gÀ \hÀ \½À \ÃÀ ]À ]XÀ ]§À ]ÁÀ ]ÇÀ ^À ^_À ^|À ^ËÀ _À _À _]À _µÀ `À `dÀ `©À `­À `®À `ÌÀ `ÍÀ aÀ aÀ aTÀ a—À aäÀ aûÀ bFÀ bLÀ b–À bšÀ b›À b×À bãÀ cÀ cKÀ cOÀ cPÀ c—À c£À càÀ d*À duÀ d´À dıÀ e;À ezÀ e~À eÀ eÆÀ eÒÀ fÀ fYÀ f¤À fãÀ g,À giÀ g¨À g¬À g­À gÉÀ gÊÀ hÀ h,À hKÀ hzÀ h§À hµÀ h»À hîÀ hïÀ i.À i{À i’À i™À iâÀ j0À j~À j¸À k	À kVÀ k€À k´À kÖÀ lÀ lÀ lEÀ lÀ l§À l®À làÀ mÀ m0À m4À m5À m‹À mÒÀ mÖÀ m×À n(À nIÀ n—À næÀ o3À oÀ oĞÀ pÀ pÀ pbÀ p³À páÀ q%À qmÀ qvÀ q|À q–À qçÀ qôÀ qûÀ qÿÀ r À rÀ r&À rBÀ rŠÀ r¹À rèÀ rìÀ ríÀ rùÀ sÀ s;À s_À scÀ sdÀ s¥À s«À sêÀ tÀ tcÀ t•À t–À tÖÀ tÜÀ u"À uOÀ uqÀ uÀ uäÀ vÀ v*À v8À v>À v`À vÀ v¢À vÌÀ vãÀ wÀ wÀ wÀ w-À wQÀ w…À w¦À wÑÀ xÀ x1À xZÀ xƒÀ x¨À xÕÀ y
+À yHÀ yLÀ yMÀ y€À yµÀ yØÀ zÀ zÀ zÀ z;À zRÀ zVÀ zWÀ z}À zƒÀ zÆÀ {À {À {[À {ªÀ {øÀ |AÀ |‘À |¡À |àÀ }'À }oÀ }±À }ÜÀ ~À ~À ~À ~GÀ ~^À ~~À ~‚À ~ƒÀ ~ÔÀ ~àÀ ~æÀ ;À ‰À ÙÀ €À €À €SÀ €cÀ €À €®À €ÖÀ €äÀ €êÀ À "À &À 'À oÀ ‘À ÊÀ ğÀ ‚À ‚*À ‚0À ‚UÀ ‚lÀ ‚pÀ ‚qÀ ‚¢À ‚ØÀ ‚úÀ ƒ À ƒ$À ƒ%À ƒoÀ ƒ”À ƒšÀ ƒßÀ ƒåÀ „"À „(À „8À „>À „À „¡À „ìÀ …À …IÀ …MÀ …NÀ …iÀ …jÀ …À …ÂÀ …åÀ †À †3À †AÀ †GÀ †[À †À †”À †²À †ÏÀ †ñÀ †÷À ‡À ‡$À ‡=À ‡mÀ ‡sÀ ‡wÀ ‡xÀ ‡“À ‡ÅÀ ‡ÉÀ ‡ÊÀ ‡ûÀ ˆÀ ˆ7À ˆTÀ ˆrÀ ˆ€À ˆ†À ˆÀ ˆ½À ˆÁÀ ˆÂÀ ‰À ‰;À ‰VÀ ‰tÀ ‰“À ‰¡À ‰§À ‰¿À ‰ÖÀ ‰ÚÀ ‰ÛÀ ŠÀ Š/À ŠIÀ ŠfÀ Š„À Š’À Š˜À Š¯À ŠÏÀ ŠÓÀ ŠÔÀ ‹#À ‹)À ‹sÀ ‹À ‹•À ‹ÖÀ ‹ÜÀ Œ*À ŒzÀ Œ·À ŒÙÀ ŒëÀ >À [À ƒÀ  À ®À ´À ËÀ ÌÀ À lÀ –À ÉÀ àÀ äÀ åÀ À <À NÀ ¡À ¾À æÀ À À À .À EÀ IÀ JÀ ~À À ¯À ËÀ çÀ õÀ ûÀ ‘À ‘(À ‘,À ‘-À ‘aÀ ‘¢À ‘ÇÀ ‘õÀ ‘ùÀ ‘úÀ ’@À ’\À ’bÀ ’šÀ ’ À ’ñÀ “À “À “>À “«À “åÀ “éÀ ”'À ”6À ”UÀ ”ÂÀ ”üÀ • À •&À •QÀ •UÀ •VÀ •À •ÅÀ •êÀ –À –$À –*À –OÀ –fÀ –jÀ –kÀ –À –¤À –æÀ –ìÀ —0À —[À —‰À —¦À —ÎÀ —íÀ —ûÀ ˜À ˜À ˜IÀ ˜_À ˜À ˜ƒÀ ˜„À ˜ºÀ ˜ÀÀ ™À ™\À ™¤À ™ÌÀ ™æÀ šÀ š'À š5À š;À šOÀ š}À šƒÀ š˜À š¬À š×À šİÀ šôÀ šøÀ šùÀ ›À ›GÀ ›dÀ ›†À ›§À ›µÀ ›»À ›ÕÀ ›ìÀ ›ğÀ ›ñÀ œÀ œÀ œwÀ œ}À œØÀ 'À “À ÖÀ ïÀ À 5À CÀ IÀ dÀ {À À €À ÈÀ ŸÀ ŸÀ ŸeÀ ŸÀ Ÿ¢À ŸØÀ ŸòÀ  À  AÀ  OÀ  UÀ  tÀ  ´À  áÀ ¡À ¡JÀ ¡|À ¡šÀ ¡À ¡ŸÀ ¡ßÀ ¢-À ¢3À ¢wÀ ¢ÀÀ £À £YÀ £nÀ £§À £ÊÀ £òÀ £öÀ £÷À ¤.À ¤4À ¤eÀ ¤ŸÀ ¤ÃÀ ¤ëÀ ¤ïÀ ¤ğÀ ¥!À ¥'À ¥rÀ ¥ÈÀ ¦À ¦*À ¦XÀ ¦‚À ¦À ¦–À ¦¹À ¦ÏÀ ¦ÓÀ ¦ÔÀ §À §	À §TÀ §¨À §ãÀ ¨À ¨0À ¨XÀ ¨fÀ ¨lÀ ¨À ¨£À ¨§À ¨¨À ¨óÀ ©À ©À ©gÀ ©mÀ ©}À ©ƒÀ ©ÒÀ ©æÀ ªÀ ªÀ ªVÀ ªˆÀ ªªÀ ªÛÀ ªÜÀ «À «À «_À «¢À «ÊÀ ¬À ¬KÀ ¬€À ¬†À ¬ÊÀ ­À ­;À ­]À ­¤À ­ÉÀ ­ùÀ ®)À ®7À ®=À ®fÀ ®}À ®À ®¡À ®¢À ®éÀ ¯À ¯%À ¯iÀ ¯¬À ¯ÔÀ °À °UÀ °ŠÀ °À °àÀ ±À ±
+À ±]À ±¦À ±¬À ±ğÀ ²5À ²|À ²ºÀ ²ØÀ ³À ³À ³À ³HÀ ³NÀ ³À ³÷À ´GÀ ´ŠÀ ´×À µ À µ<À µ@À µAÀ µÀ µÚÀ µàÀ ¶/À ¶5À ¶’À ¶ãÀ ·À ·RÀ ·VÀ ·WÀ ·À ·•À ·ŞÀ ¸&À ¸FÀ ¸xÀ ¸—À ¸˜À ¸ÏÀ ¸ĞÀ ¹À ¹À ¹/À ¹YÀ ¹À ¹ À ¹ÂÀ ¹ßÀ ¹÷À ºÀ ºÀ º#À º$À ºeÀ º À ºØÀ ºÙÀ »%À »tÀ »³À »İÀ ¼À ¼À ¼aÀ ¼¨À ¼ÕÀ ¼ÛÀ ½À ½ZÀ ½}À ½µÀ ½ùÀ ¾3À ¾lÀ ¾§À ¾ãÀ ¿À ¿4À ¿8À ¿9À ¿EÀ ¿ŒÀ ¿¾À ÀÀ ÀPÀ ÀÀ À½À ÀôÀ ÁUÀ ÁÀ Á¶À ÂÀ Â-À Â:À Â^À ÂƒÀ Â‘À Â—À ÂÁÀ ÂÚÀ Ã4À ÃCÀ ÃwÀ ÃÀ ÃÕÀ Ä"À ÄcÀ Ä²À ÄóÀ ÅÀ Å1À Å™À ÅªÀ Å¹À ÅÅÀ ÅäÀ ÆÀ ÆÀ ÆnÀ ÆvÀ Æ|À Æ‡À Æ¹À ÆÚÀ ÆıÀ Ç#À Ç@À Ç[À ÇzÀ Ç{À Ç£À ÇÖÀ ÇÜÀ ÇİÀ ÇşÀ È'À È-À È.À ÈkÀ È“À ÈŞÀ ÈíÀ É6À ÉŠÀ É’À ÉÜÀ ÉëÀ Ê2À Ê„À ÊŒÀ Ê’À Ê–À Ê—À Ê¼À ÊòÀ Ë
+À ËÀ Ë_À ËhÀ ËÀ Ë•À Ë™À ËšÀ Ë¦À ÌÀ Ì\À Ì›À ÌÏÀ ÌåÀ ÌÿÀ ÍÀ Í0À ÍHÀ ÍkÀ ÍÌÀ ÎÀ ÎqÀ Î¦À ÎÁÀ ÎñÀ ÎúÀ ÏÀ ÏÀ Ï<À ÏŠÀ ÏÑÀ Ğ À ĞnÀ Ğ¸À Ñ
+À Ñ7À Ñ]À ÑxÀ Ñ‚À Ñ¦À ÑÅÀ ÑÔÀ ÒÀ ÒjÀ Ò‡À Ò›À Ò¥À ÒÏÀ ÓÀ Ó;À ÓtÀ Ó¤À Ó®À ÓñÀ Ô5À ÔSÀ ÔwÀ ÔšÀ ÔĞÀ ÕÀ ÕÀ ÕaÀ Õ²À Õ×À ÖÀ Ö,À ÖWÀ ÖƒÀ ÖÀ ÖÜÀ ×À ×9À ×®À ×ÑÀ ØÀ ØkÀ ØŒÀ Ø·À ØâÀ ØğÀ ÙUÀ Ù|À Ù³À ÙÁÀ ÙÖÀ ÙéÀ ÙüÀ ÚKÀ ÚUÀ Ú…À ÚØÀ Û&À Û0À Û[À Û‘À ÛáÀ ÛòÀ ÜÀ ÜCÀ ÜYÀ ÜÀ ÜÀ Ü§À Ü¸À ÜæÀ İÀ İ7À İZÀ İbÀ İhÀ İÀ İŞÀ İâÀ İãÀ ŞÀ Ş%À Ş`À Ş—À ŞÀ Ş¢À Ş£À ŞêÀ ß*À ßpÀ ßqÀ ß§À ßåÀ ßéÀ ßêÀ à-À àLÀ à À àÀÀ àÎÀ àÔÀ á(À á;À á„À áªÀ á±À áµÀ á¶À áúÀ âÀ ânÀ âÀ âœÀ â¢À âöÀ ã	À ãRÀ ãxÀ ãÀ ãƒÀ ã„À ãÂÀ ãáÀ ä4À äsÀ äÀ äÀ ä£À äøÀ åÀ å À å@À åfÀ åoÀ å•À åœÀ å À å¡À åàÀ åÿÀ æRÀ æŸÀ æ¿À æÍÀ æÓÀ ç-À ç@À çUÀ çuÀ çŸÀ ç¨À çÎÀ çÕÀ çÙÀ çÚÀ èÀ èÀ èoÀ è À èµÀ è½À èâÀ èøÀ é À éÀ é À é$À é%À éQÀ ékÀ éÅÀ éöÀ êÀ êÀ ê8À êNÀ êVÀ êvÀ ê|À êÀ ê‘À ê’À êÜÀ êíÀ êòÀ ë6À ëˆÀ ëÊÀ ëôÀ ì(À ìYÀ ìÀ ì¦À ì®À ì´À ìÅÀ ìÉÀ ìÊÀ ìÖÀ ìûÀ íÀ í@À ílÀ ímÀ íŸÀ íÂÀ íŞÀ î=À îfÀ î}À î«À î¯À î°À î¼À îÎÀ îâÀ îüÀ ï(À ïYÀ ïmÀ ï”À ï»À ï¿À ïÀÀ ïÌÀ ïçÀ ğ*À ğmÀ ğÀ ğµÀ ğ»À ğŞÀ ñÀ ñ	À ñ&À ñ*À ñ+À ñ7À ñkÀ ñ®À ññÀ òÀ ò4À ò:À ò]À ò}À òƒÀ ò¥À ò©À òªÀ òÔÀ òÕÀ ó!À ó"À ó>À óbÀ ó˜À óÎÀ óÕÀ óÙÀ óÚÀ óùÀ ôÀ ô2À ôWÀ ô}À ô„À ôˆÀ ô‰À ôºÀ ôÏÀ ôóÀ õ;À õ…À õŒÀ õÀ õ‘À õäÀ ö3À ö‰À öŠÀ ö×À öİÀ ÷.À ÷~À ÷ËÀ øÀ øcÀ øiÀ øyÀ øÀ øÀÀ øùÀ ùHÀ ùkÀ ùlÀ ù™À ùšÀ ùÕÀ úfÀ úÀ úÉÀ û-À û†À ûÊÀ û×À üXÀ üÓÀ üöÀ ı0À ıgÀ ıpÀ ıvÀ ızÀ ı{À ıÊÀ ıûÀ şÀ şPÀ ş^À şdÀ şµÀ ş×À ÿÀ ÿ:À ÿMÀ ÿSÀ ÿvÀ ÿwÀ ÿ½À À 0À ZÀ aÀ bÀ yÀ …À îÀ
+ÀÀÀWÀ]ÀmÀsÀ»ÀíÀ9À^ÀšÀ½ÀÀÀÀlÀ|À‚À’À˜ÀßÀ*ÀoÀ¬ÀòÀÀKÀnÀŸÀıÀDÀ À¡ÀÀHÀIÀªÀÏÀîÀÀFÀ‡ÀªÀÄÀîÀ		À	%À	0À	SÀ	vÀ	—À	ºÀ
+À
+dÀ
+²À
+ãÀÀVÀyÀ“ÀÓÀîÀÀÀÀÀFÀ‹ÀÀÀœÀÏÀ#À:À©ÀÑÀØÀÀ9ÀqÀ©ÀÃÀÇÀÈÀÔÀÀ[ÀrÀ¶ÀÀtÀœÀ£ÀèÀÀ<ÀtÀÀ¡À¢À À6À|À}À›ÀÅÀùÀÀ2À8ÀKÀ†À®ÀÉÀåÀ ÀDÀ_ÀzÀÀ˜ÀÀÈÀÌÀÍÀ÷À ÀUÀ™ÀÕÀÖÀòÀÀ<À“À¢ÀúÀ^ÀfÀ™ÀŸÀ ÀëÀ:ÀJÀcÀ²À À@À–ÀíÀóÀÀ+À1ÀnÀÂÀÚÀ*À;ÀLÀSÀWÀXÀdÀ¶À·ÀÃÀöÀ$À‹À’À¶ÀºÀ»ÀÇÀ	À,ÀoÀsÀtÀ€À­À®ÀºÀÇÀÀUÀ¬ÀøÀIÀ˜ÀÜÀ À uÀ ãÀ ñÀ!À!-À!UÀ!jÀ!xÀ!¹À!¿À!ÃÀ!ÄÀ!æÀ"À"À"!À"aÀ"À"²À"ÓÀ"ÔÀ"ğÀ#/À#OÀ#uÀ#}À#ƒÀ#‡À#ˆÀ#¨À#ÑÀ#ÒÀ$"À$nÀ${À$À$İÀ$ŞÀ%À%À%fÀ%‰À%ÁÀ%ôÀ&0À&4À&5À&ƒÀ&ÌÀ&ÜÀ&âÀ'-À'WÀ'†À'¹À'½À'íÀ(	À(%À()À(*À(xÀ(½À(ÍÀ(ÓÀ)À)CÀ)XÀ)À)’À)¨À)ÄÀ)ÕÀ)ÙÀ)ÚÀ*(À*yÀ*‰À*À*İÀ+À+!À+YÀ+]À+^À+¬À+ıÀ,À,À,_À,ŠÀ,¥À,İÀ,áÀ,ıÀ-À-0À-4À-5À-pÀ-vÀ-¸À.À.TÀ.£À.©À.ïÀ/6À/KÀ/À/ÎÀ/ÒÀ/ÓÀ0À0À0jÀ0•À0ûÀ1À1‹À1»À1ÈÀ2À2À2FÀ2À2À2ÅÀ2ãÀ3À3,À33À34À3\À3`À3aÀ3œÀ3ŞÀ3ßÀ4À4#À4bÀ4 À4ãÀ4çÀ4èÀ5EÀ5KÀ5¦À5¬À5öÀ6&À6,À6kÀ6ÓÀ6öÀ7cÀ7¥À8*À8À8ÕÀ8ÖÀ8éÀ8şÀ9ZÀ9´À9ÙÀ9âÀ9ïÀ9öÀ9úÀ9ûÀ:7À:=À:|À:¾À:áÀ;À;…À;ÈÀ;íÀ<À<XÀ<eÀ<ÆÀ<ÌÀ<ôÀ<øÀ<ùÀ=@À=VÀ=kÀ=¤À=ôÀ>#À>LÀ>œÀ>¥À>«À>úÀ?À?\À?bÀ?¥À?ÄÀ?åÀ@À@HÀ@wÀ@›À@ÆÀ@ÌÀ@îÀ@ïÀA>ÀAŒÀAÅÀAÌÀBÀBlÀBÀBÀBñÀC5ÀC\ÀC}ÀC£ÀCåÀD	ÀDPÀD^ÀD€ÀD«ÀDÕÀDäÀDğÀEÀE<ÀEgÀEtÀE™ÀE³ÀEÛÀEÿÀF,ÀF_ÀFpÀF~ÀF ÀFÎÀFûÀG
+ÀGÀG;ÀG^ÀGÀG¦ÀG·ÀG¿ÀGÅÀGÆÀHÀHÀHÀHaÀHfÀHµÀIÀILÀIƒÀI„ÀIüÀJIÀJ•ÀJ¢ÀJÛÀKÀKÀK ÀK!ÀKrÀKÀK†ÀK×ÀL ÀLjÀLºÀLÊÀLÏÀM ÀMjÀM¸ÀMìÀN&ÀN+ÀNwÀNÇÀOÀO+ÀORÀOÕÀPÀPÀPÀP8ÀP9ÀP†ÀP‹ÀPÕÀQ ÀQ2ÀQTÀQyÀQ˜ÀQ¹ÀRÀR.ÀRQÀRrÀR•ÀSÀSÀSÀSÀShÀS‡ÀS¼ÀSùÀT3ÀTFÀTeÀT»ÀTÈÀTçÀU=ÀUJÀUSÀUWÀUXÀUdÀUqÀU±ÀV4ÀVHÀVÙÀWÀW4ÀWQÀW ÀWıÀXÀXÀXÀXiÀXìÀY ÀY‘ÀYÉÀZÀZÀZÀZ ÀZ9ÀZrÀZùÀ[|À[À[ÆÀ[şÀ\@À\^À\_À\‚À\ŸÀ\æÀ]À]VÀ]ªÀ]ÍÀ]öÀ^À^IÀ^qÀ^zÀ^À^‚À^ÈÀ_#À_$À_uÀ_vÀ_¯À_èÀ_éÀ`"À`VÀ`À`”À`•À`åÀa7Àa{Àa£Àa¾ÀaàÀbÀb'ÀbIÀbnÀbœÀbÀbñÀcOÀc­ÀcÖÀcÚÀcÛÀd.Àd4ÀdDÀdJÀd™Àd­ÀeÀe8ÀetÀeøÀf6Àf ÀfüÀfıÀg"ÀgPÀgVÀgWÀgvÀgÃÀgÉÀgÊÀgíÀh'Àh-Àh.Àh‚ÀhÉÀhÿÀi\Ài~Ài¼ÀjÀj=ÀjCÀjxÀjÔÀjõÀk4Àk“Àk·Àk½Àk¾ÀlÀlHÀlµÀl¶Àl÷ÀmÀmaÀmƒÀm‰ÀmÉÀméÀn3ÀnVÀn\Àn]Àn„Àn…Àn Àn¤Àn¥ÀnñÀoÀoÀo$Ào*ÀoyÀoÀpÀpHÀpmÀp‹Àp¬ÀpĞÀpñÀqÀq8Àq>Àq|ÀqµÀqÒÀrÀrQÀrÀrêÀsÀs}ÀsŠÀs¹Às¿ÀtÀtÀtÀtxÀt½ÀtñÀuEÀu}Àu«ÀvÀvÀv ÀvuÀv—Àv¾Àw Àw'Àw+Àw,Àw}Àw²Àw¸Àx	Àx"Àx(ÀxqÀxwÀxÈÀyÀyÀy^Ày¦ÀyêÀz>ÀzŠÀzàÀ{À{À{"À{7À{NÀ{gÀ{nÀ{rÀ{sÀ{³À{íÀ{îÀ|!À|[À|aÀ|bÀ|¢À|âÀ|ãÀ}+À}uÀ}˜À}ËÀ}ÑÀ}ÒÀ~À~>À~?À~bÀ~•À~›À~ŸÀ~ À~óÀ~ôÀ\ÀˆÀ¡ÀÔÀ€À€À€uÀ€ŒÀ€®À€ÁÀ€ÔÀ€ÛÀ€üÀ(ÀAÀtÀ¨À±ÀÊÀ‚À‚)À‚>À‚GÀ‚MÀ‚QÀ‚RÀ‚^À‚ŸÀ‚ïÀ‚ıÀƒÀƒ5Àƒ9Àƒ:ÀƒFÀƒ}Àƒ ÀƒÛÀ„À„(À„8À„TÀ„lÀ„À„¸À„ÁÀ„ÎÀ„ñÀ…À…À…SÀ……À…ÕÀ…ÛÀ…ßÀ…àÀ†2À†3À†?À†zÀ†–À†¬À†ÁÀ†ÛÀ†öÀ‡À‡]À‡cÀ‡gÀ‡hÀ‡tÀ‡¹À‡äÀˆ#Àˆ{Àˆ²ÀˆéÀ‰AÀ‰†À‰ùÀŠPÀŠ ÀŠëÀŠïÀŠğÀŠüÀ‹.À‹LÀ‹dÀ‹…À‹À‹ÏÀ‹ÚÀ‹áÀ‹åÀ‹çÀ‹èÀŒÀŒ<ÀŒ`ÀŒ{ÀŒ‹ÀŒŒÀŒ˜ÀŒÙÀŒÚÀŒæÀÀÀÀ;À<ÀnÀ‘ÀÂÀáÀïÀõÀöÀ-ÀFÀGÀ~À–ÀœÀÀ±ÀãÀÀÀÀÀ'À^ÀÀªÀãÀÀ<ÀoÀuÀyÀzÀ†À«ÀÄÀïÀóÀôÀ‘ À‘À‘@À‘TÀ‘XÀ‘YÀ‘eÀ‘rÀ‘ÈÀ‘ÊÀ‘ËÀ’À’3À’7À’†À’×À“&À“wÀ“ÈÀ“ïÀ“óÀ”5À”‚À”ÂÀ•À•6À•:À•HÀ•LÀ•À•ãÀ–*À–pÀ–ÃÀ—À—OÀ—xÀ—~À—ÆÀ˜À˜dÀ˜¤À˜ªÀ˜öÀ™;À™‹À™˜À™ÒÀ™ÓÀš	ÀšÀš_Àš­ÀšøÀšşÀ›OÀ›À›ÖÀœÀœÀœ Àœ\ÀœvÀœ™Àœ¶ÀœãÀÀÀ5À6ÀfÀ€À¨ÀÏÀİÀãÀÀÀÀÀWÀwÀ¥ÀÎÀÜÀâÀŸÀŸÀŸÀŸ ÀŸjÀŸpÀŸ¯ÀŸöÀ ;À qÀ ›À ©À ¯À ÒÀ éÀ íÀ îÀ¡8À¡>À¡|À¡ÀÀ¢À¢6À¢_À¢mÀ¢sÀ¢•À¢¬À¢°À¢±À¢½À£À£4À£]À£œÀ£ªÀ£°À£±À£ÓÀ¤À¤VÀ¤À¤ÉÀ¤óÀ¤úÀ¤ûÀ¥"À¥9À¥qÀ¥ÃÀ¥ÛÀ¥äÀ¥êÀ¥îÀ¥ïÀ¥ûÀ¦6À¦^À¦rÀ¦xÀ¦—À¦ØÀ¦ŞÀ§À§GÀ§ƒÀ§ÇÀ¨
+À¨À¨À¨À¨EÀ¨XÀ¨YÀ¨À¨À¨½À¨İÀ¨ëÀ¨ñÀ©À©"À©&À©'À©fÀ©~À©ƒÀ©ÎÀ©ëÀªÀªÀª1ÀªcÀªdÀªŒÀª¢ÀªÃÀªğÀªşÀ«À«À«À«5À«9À«:À«gÀ«€À«¤À«ÆÀ«ÔÀ«ÚÀ«õÀ¬À¬À¬À¬=À¬cÀ¬†À¬¨À¬¶À¬¼À¬×À¬îÀ¬òÀ¬óÀ­1À­RÀ­~À­¶À­ÄÀ­ÊÀ­ËÀ­ïÀ®À®$À®*À®.À®/À®fÀ®ƒÀ®«À®ÓÀ®áÀ®çÀ¯À¯À¯#À¯$À¯›À¯ìÀ°À°+À°–À°îÀ± À±
+À±À±=À±bÀ±~À±±À±ÀÀ²À²BÀ²JÀ²PÀ²TÀ²UÀ²aÀ²©À²íÀ²îÀ³-À³.À³{À³‰À³À³À³ÎÀ³ÏÀ´À´ À´YÀ´ŸÀ´¸À´ìÀ´íÀµÀµ\ÀµbÀµcÀµ®ÀµÆÀ¶À¶)À¶/À¶0À¶FÀ¶‘À¶ÉÀ¶ĞÀ¶ÔÀ¶ÕÀ¶áÀ·À·DÀ·XÀ·^À·_À·~À·˜À·À·ÇÀ·ùÀ¸5À¸eÀ¸™À¸ÍÀ¹À¹TÀ¹XÀ¹ZÀ¹[À¹¡À¹àÀ¹áÀºÀºÀºÀºHÀº„Àº©Àº¯Àº³Àº´ÀºÀÀºïÀ»+À»SÀ»YÀ»]À»^À»jÀ»²À»îÀ¼!À¼'À¼+À¼,À¼8À¼sÀ¼›À¼¯À¼µÀ½"À½5À½;À½<À½“À½ŞÀ¾À¾aÀ¾vÀ¾~À¾„À¾…À¾—À¾›À¾    
+_kCaretGap_kCaretHeightOffset_kFloatingCursorSizeIncrease_kFloatingCursorRadius6_kShortestDistanceSquaredWithFloatingAndRegularCursorsTextSelectionPointVerticalCaretMovementRunRenderEditable_RenderEditableCustomPaintRenderEditablePainter_TextHighlightPainter_CaretPainter_CompositeRenderEditablePainter 4

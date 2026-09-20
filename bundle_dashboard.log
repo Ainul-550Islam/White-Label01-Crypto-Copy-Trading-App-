@@ -1,0 +1,32 @@
+dashboard for execution-engine (derived from scraped exposition)
+
+SYSTEM  (0 rows)
+
+MARKET_DATA  (0 rows)
+
+STRATEGIES  (0 rows)
+
+RISK  (0 rows)
+
+EXECUTION  (1 row)
+  orders_total                                 3.0  [execution-engine]
+
+ORDERS  (0 rows)
+
+POSITIONS  (0 rows)
+
+QUEUES  (0 rows)
+
+DATASETS  (0 rows)
+
+ALERTS  (0 rows)
+
+ABSENT  (registered by this service with a help string, absent from this scrape)
+Reported as absence, not as a zero: a family that is registered and has produced no series is a fact the scrape carries, and 0 would have been a different fact.
+  wlct_component_health
+  wlct_component_health_age_seconds
+  wlct_process_cpu_seconds_total
+  wlct_process_file_descriptor_limit
+  wlct_process_memory_rss_bytes
+  wlct_process_open_file_descriptors
+  wlct_process_uptime_seconds

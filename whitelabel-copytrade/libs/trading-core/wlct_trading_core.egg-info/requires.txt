@@ -1,0 +1,9 @@
+
+[dev]
+pytest>=8.0
+mypy>=1.8
+ruff>=0.3
+
+[live]
+websockets<18,>=13.1
+httpx<0.29,>=0.27

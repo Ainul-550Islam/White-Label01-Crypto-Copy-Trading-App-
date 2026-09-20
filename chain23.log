@@ -1,0 +1,114 @@
+
+=== deps: python ===
+python deps ok
+
+=== deps: node ===
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+> rimraf dist && tsc -p tsconfig.json
+
+Tip: Easily identify and fix slow SQL queries in your app. Optimize helps you enhance your visibility: https://pris.ly/--optimize
+
+node deps ok (attempt 1)
+v20.20.2
+
+=== preflight: the bundle is in sync before any document is written ===
+precheck exit=0 -> scrape bundle matches a fresh render
+--check wrote nothing: yes
+
+=== generate PART16 ===
+gen 16 exit=0 lines=23008
+
+=== generate PART17 ===
+gen 17 exit=0 lines=14042
+
+=== generate PART18 ===
+gen 18 exit=0 lines=14114
+
+=== generate PART19 ===
+gen 19 exit=0 lines=20916
+
+=== generate PART20 ===
+gen 20 exit=0 lines=12780
+
+=== generate PART21 ===
+gen 21 exit=0 lines=12126
+
+=== generate PART22 ===
+gen 22 exit=0 lines=11151
+
+=== source dump ===
+Wrote 11 sections, 869 files, 591555 lines to docs/source/
+
+=== check PART16 ===
+check 16 exit=0 -> OK: PART16_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART17 ===
+check 17 exit=0 -> OK: PART17_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART18 ===
+check 18 exit=0 -> OK: PART18_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART19 ===
+check 19 exit=0 -> OK: PART19_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART20 ===
+check 20 exit=0 -> OK: PART20_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART21 ===
+check 21 exit=0 -> OK: PART21_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== check PART22 ===
+check 22 exit=0 -> OK: PART22_HANDOVER_FULL_SOURCE.md is byte-identical to a fresh generation
+
+=== core gates ===
+All checks passed!
+Success: no issues found in 152 source files
+.....................................                                    [100%]
+1765 passed in 19.10s
+Found 17 errors.
+[*] 5 fixable with the `--fix` option.
+
+=== engine + services ===
+All checks passed!
+Success: no issues found in 24 source files
+428 passed, 12 skipped in 4.97s
+43 passed in 0.42s
+19 passed in 0.13s
+
+=== node + scripts gates ===
+tsc exit=0
+eslint exit=0
+Snapshots:   0 total
+Time:        13.961 s, estimated 14 s
+admin tsc exit=0
+# tests 133
+# pass 133
+# fail 0
+dr-schedule-install.test.mjs: # pass 26
+dr-schedule-install.test.mjs: # fail 0
+dr-rehearsal.test.mjs: # pass 33
+dr-rehearsal.test.mjs: # fail 0
+dr-manifest.test.mjs: # pass 63
+dr-manifest.test.mjs: # fail 0
+
+=== dr command set ===
+manifest valid: 5 components (4 with cadence), RPO 60m / RTO 4h, drill every 90d (timed: true), ledger entries: 0
+check exit=0
+schedule valid: 3 job line(s) (--due, --check, --check-rls), derived from 5 components, no ledger-writing mode present
+check-schedule exit=0
+check-rls exit=1
+verify-rls exit=3
+install --check exit=4
+rehearsal --status exit=1
+chaos --list exit=0
+
+=== bundle gates, re-run last ===
+check exit=0 -> scrape bundle matches a fresh render
+emit exit=0 -> unchanged infrastructure/observability/prometheus/rules/wlct.rules.yml
+rules exit=0 -> refused  WORKER_FAILURE             no numeric threshold in the catalog (threshold: None)
+catalog lines: 63
+dashboard exit=0 ->  /   wlct_process_uptime_seconds
+bundle sha after every gate: a7898b4d59216cc5
+
+=== DONE ===

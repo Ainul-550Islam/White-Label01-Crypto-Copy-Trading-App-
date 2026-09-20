@@ -1,0 +1,25 @@
+pre-regeneration deltas for Part 20's change set (baseline = newest prior handover that embedded the file)
+  NEW                apps/api/src/modules/worker/engine-status-contract.ts: 331 lines (no prior record)
+  NEW                apps/api/src/modules/worker/engine-status-contract.spec.ts: 253 lines (no prior record)
+  NEW                apps/api/src/modules/worker/engine-status-parity.spec.ts: 254 lines (no prior record)
+  NEW                apps/api/src/modules/observability/engine-posture.service.ts: 316 lines (no prior record)
+  NEW                apps/api/src/modules/observability/engine-posture.service.spec.ts: 395 lines (no prior record)
+  NEW                docs/PART20_ENGINE_STATUS_EDGE.md: 422 lines (no prior record)
+  NEW                docs/dr/schedule/dr.cron: 46 lines (no prior record)
+  NEW                services/execution-engine/tests/test_part20_status_read.py: 345 lines (no prior record)
+  MODIFIED-BASELINED apps/api/src/modules/observability/observability.module.ts: now 119, prior 93, delta +26
+  MODIFIED-BASELINED apps/api/src/modules/observability/observability.service.ts: now 399, prior 390, delta +9
+  MODIFIED-BASELINED apps/api/src/modules/worker/engine-internal.client.ts: now 395, prior 352, delta +43
+  MODIFIED-BASELINED services/execution-engine/app/security.py: now 193, prior 112, delta +81
+  MODIFIED-BASELINED services/execution-engine/app/routers/internal.py: now 275, prior 254, delta +21
+  MODIFIED-BASELINED services/execution-engine/tests/conftest.py: now 69, prior 62, delta +7
+  MODIFIED-BASELINED scripts/dr-manifest.mjs: now 1321, prior 1039, delta +282
+  MODIFIED-BASELINED scripts/dr-manifest.test.mjs: now 840, prior 625, delta +215
+  MODIFIED-BASELINED docker-compose.yml: now 452, prior 435, delta +17
+  MODIFIED-BASELINED docs/ARCHITECTURE.md: now 402, prior 389, delta +13
+  MODIFIED-BASELINED docs/GETTING_STARTED.md: now 325, prior 293, delta +32
+  MODIFIED-BASELINED docs/PART11_WORKER_SCALING.md: now 533, prior 524, delta +9
+  MODIFIED-BASELINED docs/PART19_LIVE_ENABLEMENT.md: now 521, prior 514, delta +7
+  MODIFIED-BASELINED docs/ROADMAP.md: now 228, prior 223, delta +5
+  MODIFIED-BASELINED docs/SECURITY.md: now 580, prior 548, delta +32
+new-file lines 2362, sum of deltas +799

@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: wlct-trading-core
+Version: 0.6.0
+Summary: Shared trading data-plane domain library for the WLCT platform
+Requires-Python: >=3.11
+Provides-Extra: live
+Requires-Dist: websockets<18,>=13.1; extra == "live"
+Requires-Dist: httpx<0.29,>=0.27; extra == "live"
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: mypy>=1.8; extra == "dev"
+Requires-Dist: ruff>=0.3; extra == "dev"

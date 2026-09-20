@@ -1,0 +1,5 @@
+{
+  "enable-web": false,
+  "enable-linux-desktop": false,
+  "enable-android": true
+}
