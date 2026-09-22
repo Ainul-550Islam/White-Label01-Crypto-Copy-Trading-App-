@@ -122,6 +122,16 @@ async def engine_status(
             else IncidentSinkView(**wiring["incidents"])
         ),
         locks_distributed=bool(wiring["locksDistributed"]),
+        # Part 20: signed transport posture, mapped from describe() for the same
+        # reason every other field is: the worker asserts against this surface.
+        signed_transport_wired=bool(wiring.get("signedTransportWired", False)),
+        key_registry_configured=bool(wiring.get("keyRegistryConfigured", False)),
+        # Part 21: distributed lock wiring posture.
+        distributed_lock_wiring=wiring.get("distributedLockWiring"),
+        # Part 22: venue attestation posture.
+        venue_attestation=wiring.get("venueAttestation"),
+        # Part 23: credential registry posture.
+        credential_registry=wiring.get("credentialRegistry"),
         commands=[str(command) for command in wiring["commands"]],
     )
 

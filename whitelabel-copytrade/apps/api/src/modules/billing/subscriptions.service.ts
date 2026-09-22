@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Optional, Inject, forwardRef } from '@nestjs/common';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 import {
   AuditAction,
@@ -15,6 +15,7 @@ import { PrismaService } from '../../infrastructure/prisma/prisma.service';
 import { AuditService } from '../audit/audit.service';
 import { NotificationsService } from '../notifications/notifications.service';
 import { PlansService } from './plans.service';
+import { BillingEventService } from './notifications/billing-event.service';
 import { ConflictException, NotFoundException } from '../../common/errors/app.exception';
 import type {
   AssignSubscriptionDto,
@@ -38,6 +39,9 @@ export class SubscriptionsService {
     private readonly audit: AuditService,
     private readonly notifications: NotificationsService,
     @InjectPinoLogger(SubscriptionsService.name) private readonly logger: PinoLogger,
+    @Optional()
+    @Inject(forwardRef(() => BillingEventService))
+    private readonly billingEventService?: BillingEventService,
   ) {}
 
   async getCurrent(tenantId: string): Promise<TenantSubscriptionDto | null> {
@@ -110,6 +114,18 @@ export class SubscriptionsService {
 
     await this.notifyOwner(tenantId, 'billing.subscription_activated', { planName: plan.name });
 
+    if (this.billingEventService) {
+      this.billingEventService.onSubscriptionActivated({
+        tenantId,
+        subscriptionId: subscription.id,
+        planName: plan.name,
+        planCode: plan.code,
+        renewalDate: subscription.currentPeriodEnd.toISOString(),
+        supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+        appName: process.env.APP_NAME || 'WLCT',
+      }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription activated billing notification'));
+    }
+
     return this.toDto(subscription, this.plans.toDto(subscription.plan));
   }
 
@@ -179,6 +195,29 @@ export class SubscriptionsService {
       requestId: context.requestId,
     });
 
+    if (this.billingEventService) {
+      if (dto.atPeriodEnd) {
+        this.billingEventService.onSubscriptionCancellationScheduled({
+          tenantId,
+          subscriptionId: updated.id,
+          planName: plan.name,
+          renewalDate: updated.currentPeriodEnd.toISOString(),
+          supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+          appName: process.env.APP_NAME || 'WLCT',
+        }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription cancellation scheduled notification'));
+      } else {
+        this.billingEventService.onSubscriptionChanged({
+          tenantId,
+          subscriptionId: updated.id,
+          planName: plan.name,
+          planCode: plan.code,
+          renewalDate: updated.currentPeriodEnd.toISOString(),
+          supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+          appName: process.env.APP_NAME || 'WLCT',
+        }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription changed notification'));
+      }
+    }
+
     return this.toDto(updated, this.plans.toDto(updated.plan));
   }
 
@@ -233,7 +272,109 @@ export class SubscriptionsService {
       planName: subscription.plan.name,
     });
 
+    if (this.billingEventService) {
+      if (dto.atPeriodEnd) {
+        this.billingEventService.onSubscriptionCancellationScheduled({
+          tenantId,
+          subscriptionId: updated.id,
+          planName: subscription.plan.name,
+          renewalDate: updated.currentPeriodEnd.toISOString(),
+          supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+          appName: process.env.APP_NAME || 'WLCT',
+        }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription cancellation scheduled notification'));
+      } else {
+        this.billingEventService.onSubscriptionChanged({
+          tenantId,
+          subscriptionId: updated.id,
+          planName: subscription.plan.name,
+          planCode: subscription.plan.code,
+          renewalDate: updated.currentPeriodEnd.toISOString(),
+          supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+          appName: process.env.APP_NAME || 'WLCT',
+        }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription changed notification'));
+      }
+    }
+
     return this.toDto(updated, this.plans.toDto(updated.plan));
+  }
+
+  async resume(
+    tenantId: string,
+    context: { actorId: string; ipHash: string; requestId: string },
+  ): Promise<TenantSubscriptionDto> {
+    const subscription = await this.prisma.tenantSubscription.findFirst({
+      where: { tenantId, cancelAtPeriodEnd: true, status: { in: ['TRIALING', 'ACTIVE', 'PAST_DUE'] } },
+      include: { plan: true },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    if (!subscription) {
+      throw new NotFoundException('Cancellable subscription', tenantId);
+    }
+
+    const updated = await this.prisma.tenantSubscription.update({
+      where: { id: subscription.id },
+      data: { cancelAtPeriodEnd: false, cancelReason: null },
+      include: { plan: true },
+    });
+
+    await this.audit.recordImmediate({
+      tenantId,
+      actorType: AuditActorType.USER,
+      actorId: context.actorId,
+      action: AuditAction.SUBSCRIPTION_UPDATED,
+      outcome: AuditOutcome.SUCCESS,
+      resourceType: 'TenantSubscription',
+      resourceId: subscription.id,
+      description: 'Subscription resumed',
+      ipHash: context.ipHash,
+      requestId: context.requestId,
+    });
+
+    if (this.billingEventService) {
+      this.billingEventService.onSubscriptionResumed({
+        tenantId,
+        subscriptionId: updated.id,
+        planName: updated.plan.name,
+        renewalDate: updated.currentPeriodEnd.toISOString(),
+        supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+        appName: process.env.APP_NAME || 'WLCT',
+      }).catch((e) => this.logger.warn({ err: e }, 'Failed to trigger subscription resumed notification'));
+    }
+
+    return this.toDto(updated, this.plans.toDto(updated.plan));
+  }
+
+  async checkTrialEnding(daysBefore: number = 3): Promise<{ notified: number }> {
+    const now = new Date();
+    const threshold = new Date(now.getTime() + daysBefore * 24 * 60 * 60 * 1000);
+
+    const trialsEnding = await this.prisma.tenantSubscription.findMany({
+      where: {
+        status: 'TRIALING',
+        trialEndsAt: { gte: now, lte: threshold },
+      },
+      include: { plan: true },
+    });
+
+    let notified = 0;
+    for (const sub of trialsEnding) {
+      try {
+        if (this.billingEventService) {
+          await this.billingEventService.onTrialEnding({
+            tenantId: sub.tenantId,
+            subscriptionId: sub.id,
+            planName: sub.plan.name,
+            trialEndsAt: sub.trialEndsAt!.toISOString(),
+            supportEmail: process.env.SUPPORT_EMAIL || 'support@example.com',
+            appName: process.env.APP_NAME || 'WLCT',
+          });
+          notified++;
+        }
+      } catch {}
+    }
+
+    return { notified };
   }
 
   /**

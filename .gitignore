@@ -1,0 +1,11 @@
+# Ignore temporary script outputs and logs at root
+*.log
+*.txt
+*.py
+*.sh
+LINE_COUNTS.md
+PART*_MAP.md
+
+# OS specific
+.DS_Store
+Thumbs.db

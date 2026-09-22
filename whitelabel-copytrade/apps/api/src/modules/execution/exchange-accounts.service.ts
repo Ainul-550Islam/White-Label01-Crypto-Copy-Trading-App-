@@ -22,6 +22,8 @@ import type {
   ExchangeAccountView,
   StreamSessionView,
 } from './execution.types';
+import { PlanLimitExchangeAccountsGuard } from '../billing/enforcement/plan-limit-exchange-accounts.guard';
+import type { EnforcementActor } from '../billing/enforcement/enforcement.types';
 
 /**
  * Read and administer exchange accounts.
@@ -37,6 +39,11 @@ import type {
  *      `apiSecretCiphertext`, `passphraseCiphertext` or `encryptedDataKey`.
  *      Those columns are not needed to render anything, so they are not read;
  *      a value that never enters the process cannot leak from it.
+ *
+ * Enforcement integration (Part 2):
+ *  - maxExchangeAccountsPerUser enforced via PlanLimitExchangeAccountsGuard
+ *  - Guard uses atomic Lua reservation, per-user scoped
+ *  - No hardcoded limits, resolves from plan catalog
  */
 @Injectable()
 export class ExchangeAccountsService {
@@ -117,8 +124,48 @@ export class ExchangeAccountsService {
     private readonly prisma: PrismaService,
     private readonly audit: AuditService,
     private readonly config: AppConfigService,
+    private readonly exchangeAccountsLimitGuard: PlanLimitExchangeAccountsGuard,
     @InjectPinoLogger(ExchangeAccountsService.name) private readonly logger: PinoLogger,
   ) {}
+
+  // ---------------------------------------------------------------------------
+  // Enforcement helpers (Part 2)
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Check whether a user can link another exchange account.
+   * Uses atomic reservation to prevent race-condition over-allocation.
+   * Throws PlanLimitExceededError when limit reached.
+   */
+  async checkCanLinkExchangeAccount(
+    actor: EnforcementActor,
+    userId: string,
+  ): Promise<{ allowed: boolean; currentUsage: number; maximum: number | null; remaining: number | null }> {
+    const result = await this.exchangeAccountsLimitGuard.canLink(actor, userId);
+    return {
+      allowed: result.allowed,
+      currentUsage: result.currentUsage,
+      maximum: result.configuredMaximum,
+      remaining: result.remaining,
+    };
+  }
+
+  /**
+   * Reserve an exchange account slot for a user (atomic).
+   * Must be called before persisting a new exchange account.
+   * On persistence failure, caller must call releaseExchangeAccountSlot().
+   */
+  async reserveExchangeAccountSlot(actor: EnforcementActor, userId: string): Promise<void> {
+    await this.exchangeAccountsLimitGuard.reserve(actor, userId);
+  }
+
+  /**
+   * Release a previously reserved exchange account slot.
+   * Called when creation fails after reservation.
+   */
+  async releaseExchangeAccountSlot(actor: EnforcementActor, userId: string): Promise<void> {
+    await this.exchangeAccountsLimitGuard.release(actor, userId);
+  }
 
   // ---------------------------------------------------------------------------
   // Reads

@@ -17,7 +17,7 @@ import {
 } from '../../../common/constants/metadata.constants';
 import { AppException } from '../../../common/errors/app.exception';
 import { PermissionsService } from '../../rbac/permissions.service';
-import { SecurityEventsService } from '../../security/security-events.service';
+import { SecurityEventService as SecurityEventsService } from '../../security/security-event.service';
 import type { PermissionMode } from '../../../common/decorators/permissions.decorator';
 import type { AppRequest } from '../../../common/types/request.types';
 

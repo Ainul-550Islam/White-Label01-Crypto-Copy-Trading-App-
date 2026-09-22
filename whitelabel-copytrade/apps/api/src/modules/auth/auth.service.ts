@@ -26,7 +26,7 @@ import { UsersService } from '../users/users.service';
 import { PermissionsService } from '../rbac/permissions.service';
 import { RolesService } from '../rbac/roles.service';
 import { AuditService } from '../audit/audit.service';
-import { SuspiciousLoginDetector } from '../security/suspicious-login.detector';
+import { SecurityThreatDetectionService as SuspiciousLoginDetector } from '../security/security-threat-detection.service';
 import { NotificationsService } from '../notifications/notifications.service';
 import { AppException } from '../../common/errors/app.exception';
 import type { LoginDto } from './dto/login.dto';

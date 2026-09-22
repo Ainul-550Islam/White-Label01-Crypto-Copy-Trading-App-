@@ -52,12 +52,15 @@ STATUS_CONTRACT_KEYS: frozenset[str] = frozenset(
     {
         "adapter",
         "commands",
+        "credentialRegistry",
         "credentialFetcher",
         "credentialSource",
         "dryRun",
         "enablementMaxAgeDays",
         "incidents",
         "instanceId",
+        "distributedLockWiring",
+        "keyRegistryConfigured",
         "liveEnablement",
         "locksDistributed",
         "metricsConfigured",
@@ -66,10 +69,12 @@ STATUS_CONTRACT_KEYS: frozenset[str] = frozenset(
         "placement",
         "retentionEnabled",
         "retentionEventDays",
+        "signedTransportWired",
         "simulated",
         "store",
         "storeBackend",
         "storeDurable",
+        "venueAttestation",
     }
 )
 
@@ -129,7 +134,8 @@ class TestReadScopeAnswers:
         enablement = body["liveEnablement"]
         assert enablement is not None
         assert enablement["liveRefused"] is True
-        assert enablement["hardBlockersPresent"] is True
+        # Part 20: no hard blockers remain — signed transport is now wired
+        assert enablement["hardBlockersPresent"] is False
 
     def test_a_caller_that_names_a_tenant_gets_the_same_bytes(self, client: TestClient) -> None:
         """Back-compatibility, asserted rather than assumed.

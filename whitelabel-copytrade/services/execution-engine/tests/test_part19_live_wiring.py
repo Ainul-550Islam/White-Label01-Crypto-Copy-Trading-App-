@@ -465,10 +465,10 @@ class TestComposedRuntime:
                 ),
             )
         message = str(caught.value)
-        # The confirmation was accepted - and it is said so, in the satisfied list -
-        # while the refusal stands: the sentence's missing half still names the
-        # transport, which is the one thing this build cannot be configured into.
-        assert "signed transport wired" in message.split("satisfied:")[0]
+        # Part 20: signed transport is now wired. The confirmation was accepted -
+        # and it is said so, in the satisfied list. The refusal still stands
+        # because other prerequisites (credential source, venue attestor) are
+        # missing in this test environment.
         assert "operator confirmation accepted" in message.split("satisfied:")[1].split(".")[0]
         assert "No order was sent" in message
         assert runtime.live_enablement is not None
@@ -490,10 +490,11 @@ class TestComposedRuntime:
         assert "OPERATOR_CONFIRMATION_ACCEPTED" in {
             prerequisite.name for prerequisite in report.satisfied
         }
-        # ...and live is still refused, because the report is an explanation and not a
-        # gate: the composition's own refusal is unconditional.
+        # Part 20: signed transport is now wired. Live is still refused because
+        # other prerequisites (credential source) are missing in this test.
         assert report.blocks_live
-        assert LivePrerequisite.SIGNED_TRANSPORT_WIRED in report.missing
+        # SIGNED_TRANSPORT_WIRED is now satisfied, not missing
+        assert LivePrerequisite.SIGNED_TRANSPORT_WIRED not in report.missing
 
     def test_an_expired_confirmation_grades_unsatisfied(
         self, monkeypatch: pytest.MonkeyPatch
@@ -552,8 +553,10 @@ class TestStatusSurface:
         assert body["operatorConfirmation"] is False
         enablement = body["liveEnablement"]
         assert enablement["liveRefused"] is True
-        assert enablement["hardBlockersPresent"] is True
-        assert "SIGNED_TRANSPORT_WIRED" in enablement["missing"]
+        # Part 20: no hard blockers remain — signed transport is now wired
+        assert enablement["hardBlockersPresent"] is False
+        # SIGNED_TRANSPORT_WIRED is now satisfied, not missing
+        assert "SIGNED_TRANSPORT_WIRED" not in enablement["missing"]
         assert all(code.startswith("LIVE_") for code in enablement["missingCodes"])
         assert enablement["credentialSource"] == "none"
         assert body["placement"]["confirmationConfigured"] is False

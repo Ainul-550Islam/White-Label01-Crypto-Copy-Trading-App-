@@ -22,7 +22,7 @@ import { PrismaService } from '../../../infrastructure/prisma/prisma.service';
 import { CryptoService } from '../../../infrastructure/crypto/crypto.service';
 import { CacheService } from '../../../infrastructure/redis/cache.service';
 import { AuditService } from '../../audit/audit.service';
-import { SecurityEventsService } from '../../security/security-events.service';
+import { SecurityEventService as SecurityEventsService } from '../../security/security-event.service';
 import { AppException } from '../../../common/errors/app.exception';
 
 export interface IssueTokenContext {

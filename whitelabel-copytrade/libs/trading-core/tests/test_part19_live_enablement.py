@@ -62,10 +62,10 @@ def missing(report: LiveEnablementReport) -> set[str]:
 
 class TestChecklist:
     def test_the_hard_blocker_is_a_real_prerequisite_not_a_string(self) -> None:
-        # The constant is what makes the refusal unconditional. If it named something
-        # outside the enum - a typo, a name from a document - the report would be
-        # unable to call it out and the refusal would become computable again.
-        assert HARD_BLOCKERS == frozenset({LivePrerequisite.SIGNED_TRANSPORT_WIRED})
+        # Part 20: SIGNED_TRANSPORT_WIRED was removed from HARD_BLOCKERS because
+        # the composition root now constructs a real key registry and transport.
+        # The set is now empty — all prerequisites can be satisfied by wiring.
+        assert HARD_BLOCKERS == frozenset()
         assert HARD_BLOCKERS <= set(ALL)
 
     def test_the_enum_values_are_their_own_names(self) -> None:
@@ -121,7 +121,8 @@ class TestGrading:
         assert report.missing == ALL
         assert report.satisfied == ()
         assert report.blocks_live
-        assert report.hard_blockers_present
+        # Part 20: no hard blockers remain — signed transport is now wired
+        assert not report.hard_blockers_present
 
     def test_the_reference_deployment_is_exactly_one_short_of_the_blockers(self) -> None:
         # Everything a fully-wired simulated service can show, and the three items it
@@ -238,7 +239,8 @@ class TestRenderings:
         assert "not wired in this build" in message
         assert "refused by code" in message
         assert "signed transport wired" in message
-        assert "Of those, signed transport wired cannot be satisfied" in message
+        # Part 20: signed transport is no longer a hard blocker, so the
+        # "cannot be satisfied" clause no longer appears.
         assert "No order was sent and none will be." in message
         # The satisfied items are named too: "the review is unfinished" was the
         # sentence this replaces, and it was false the moment the review shipped.

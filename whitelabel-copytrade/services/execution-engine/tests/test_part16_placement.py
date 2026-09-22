@@ -419,7 +419,8 @@ class TestComposedRuntime:
         report = build_runtime(settings_for(("EXECUTION_MODE", "simulated"),)).live_enablement
         assert report is not None
         assert {prerequisite.name for prerequisite in report.satisfied} == {
-            "IP_ALLOWLIST_ENFORCED"
+            "IP_ALLOWLIST_ENFORCED",
+            "SIGNED_TRANSPORT_WIRED",
         }
         missing = {prerequisite.name for prerequisite in report.missing}
         assert {
@@ -432,10 +433,13 @@ class TestComposedRuntime:
             "DISTRIBUTED_LOCKS_WIRED",
             "VENUE_ATTESTOR_WIRED",
             "OPERATOR_CONFIRMATION_ACCEPTED",
-            "SIGNED_TRANSPORT_WIRED",
         } == missing
-        assert LivePrerequisite.SIGNED_TRANSPORT_WIRED in report.missing
-        assert report.hard_blockers_present and report.blocks_live
+        # Part 20: SIGNED_TRANSPORT_WIRED is now satisfied — the composition root
+        # constructs a real key registry and transport.
+        assert LivePrerequisite.SIGNED_TRANSPORT_WIRED not in report.missing
+        # No hard blockers remain
+        assert not report.hard_blockers_present
+        assert report.blocks_live
 
     def test_simulated_runtime_carries_a_reviewer_into_the_engine(self) -> None:
         runtime, _ = runtime_for()

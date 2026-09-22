@@ -47,7 +47,10 @@ export type EngineStatusKind =
   | 'integerMap'
   | 'placementView'
   | 'liveEnablementView'
-  | 'incidentSinkView';
+  | 'incidentSinkView'
+  | 'distributedLockWiringView'
+  | 'venueAttestationView'
+  | 'credentialRegistryView';
 
 export interface EngineStatusField {
   /** The wire name, i.e. the camelCase alias Pydantic emits. */
@@ -101,6 +104,31 @@ export interface EngineIncidentSinkView {
   readonly stats: Readonly<Record<string, number>>;
 }
 
+export interface EngineDistributedLockWiringView {
+  readonly distributed: boolean;
+  readonly fencingEnabled: boolean;
+  readonly ownerId: string;
+  readonly renewalIntervalMs: number;
+  readonly lockTtlMs: number;
+  readonly acquisitionTimeoutMs: number;
+  readonly description: string;
+}
+
+export interface EngineVenueAttestationView {
+  readonly wired: boolean;
+  readonly source: string;
+  readonly restBase: string;
+  readonly includesAccountFlags: boolean;
+}
+
+export interface EngineCredentialRegistryView {
+  readonly selectedProvider: string;
+  readonly multiTenant: boolean;
+  readonly requiresNetwork: boolean;
+  readonly registeredCount: number;
+  readonly registeredProviders: readonly string[];
+}
+
 export interface EngineStatus {
   readonly instanceId: string;
   readonly mode: string;
@@ -123,12 +151,20 @@ export interface EngineStatus {
   readonly credentialFetcher: string | null;
   readonly operatorConfirmation: boolean;
   readonly liveEnablement: EngineLiveEnablementView | null;
+  // --- Part 21: distributed lock wiring ---------------------------------------
+  readonly distributedLockWiring: EngineDistributedLockWiringView | null;
+  // --- Part 22: venue attestation ---------------------------------------------
+  readonly venueAttestation: EngineVenueAttestationView | null;
+  // --- Part 23: credential registry -------------------------------------------
+  readonly credentialRegistry: EngineCredentialRegistryView | null;
   readonly placement: EnginePlacementView | null;
   readonly incidents: EngineIncidentSinkView | null;
   readonly metricsConfigured: boolean;
   readonly retentionEnabled: boolean;
   readonly retentionEventDays: number;
   readonly enablementMaxAgeDays: number;
+  readonly signedTransportWired: boolean;
+  readonly keyRegistryConfigured: boolean;
   readonly simulated: boolean;
   /** Keys the engine published that this contract does not name. Not an error, and
    * never silently discarded either: the panel prints the count, so "the engine
@@ -199,6 +235,15 @@ export const ENGINE_STATUS_FIELDS: readonly EngineStatusField[] = Object.freeze(
   { key: 'incidents', kind: 'incidentSinkView', required: false, absentAs: null, nullable: true },
   { key: 'metricsConfigured', kind: 'boolean', required: false, absentAs: false },
   { key: 'locksDistributed', kind: 'boolean', required: true },
+  // Part 20: signed transport posture
+  { key: 'signedTransportWired', kind: 'boolean', required: false, absentAs: false },
+  { key: 'keyRegistryConfigured', kind: 'boolean', required: false, absentAs: false },
+  // Part 21: distributed lock wiring posture
+  { key: 'distributedLockWiring', kind: 'distributedLockWiringView', required: false, absentAs: null, nullable: true },
+  // Part 22: venue attestation posture
+  { key: 'venueAttestation', kind: 'venueAttestationView', required: false, absentAs: null, nullable: true },
+  // Part 23: credential registry posture
+  { key: 'credentialRegistry', kind: 'credentialRegistryView', required: false, absentAs: null, nullable: true },
   { key: 'commands', kind: 'stringArray', required: true },
   { key: 'simulated', kind: 'boolean', required: false, absentAs: true },
 ]);
@@ -235,14 +280,45 @@ const checkOne = (kind: EngineStatusKind, value: unknown): boolean => {
     case 'placementView':
     case 'liveEnablementView':
     case 'incidentSinkView':
+    case 'distributedLockWiringView':
+    case 'venueAttestationView':
+    case 'credentialRegistryView':
       return isRecord(value);
   }
 };
+
+const DISTRIBUTED_LOCK_WIRING_VIEW_FIELDS: readonly EngineStatusField[] = Object.freeze([
+  { key: 'distributed', kind: 'boolean', required: true },
+  { key: 'fencingEnabled', kind: 'boolean', required: true },
+  { key: 'ownerId', kind: 'string', required: true },
+  { key: 'renewalIntervalMs', kind: 'integer', required: true },
+  { key: 'lockTtlMs', kind: 'integer', required: true },
+  { key: 'acquisitionTimeoutMs', kind: 'integer', required: true },
+  { key: 'description', kind: 'string', required: true },
+]);
+
+const VENUE_ATTESTATION_VIEW_FIELDS: readonly EngineStatusField[] = Object.freeze([
+  { key: 'wired', kind: 'boolean', required: true },
+  { key: 'source', kind: 'string', required: true },
+  { key: 'restBase', kind: 'string', required: true },
+  { key: 'includesAccountFlags', kind: 'boolean', required: true },
+]);
+
+const CREDENTIAL_REGISTRY_VIEW_FIELDS: readonly EngineStatusField[] = Object.freeze([
+  { key: 'selectedProvider', kind: 'string', required: true },
+  { key: 'multiTenant', kind: 'boolean', required: true },
+  { key: 'requiresNetwork', kind: 'boolean', required: true },
+  { key: 'registeredCount', kind: 'integer', required: true },
+  { key: 'registeredProviders', kind: 'stringArray', required: true },
+]);
 
 const viewFieldsFor = (kind: EngineStatusKind): readonly EngineStatusField[] | null => {
   if (kind === 'placementView') return PLACEMENT_VIEW_FIELDS;
   if (kind === 'liveEnablementView') return LIVE_ENABLEMENT_VIEW_FIELDS;
   if (kind === 'incidentSinkView') return INCIDENT_SINK_VIEW_FIELDS;
+  if (kind === 'distributedLockWiringView') return DISTRIBUTED_LOCK_WIRING_VIEW_FIELDS;
+  if (kind === 'venueAttestationView') return VENUE_ATTESTATION_VIEW_FIELDS;
+  if (kind === 'credentialRegistryView') return CREDENTIAL_REGISTRY_VIEW_FIELDS;
   return null;
 };
 

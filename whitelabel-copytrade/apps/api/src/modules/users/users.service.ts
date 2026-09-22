@@ -25,11 +25,16 @@ import { AppException, ConflictException, NotFoundException } from '../../common
 import type { CreateUserDto } from './dto/create-user.dto';
 import type { AdminUpdateUserDto, UpdateUserDto } from './dto/update-user.dto';
 import type { ListUsersDto } from './dto/list-users.dto';
+import { PlanLimitUsersGuard } from '../billing/enforcement/plan-limit-users.guard';
+import type { EnforcementActor } from '../billing/enforcement/enforcement.types';
 
 export interface ActorContext {
   actorId: string;
+  tenantId?: string;
   ipHash: string;
   requestId: string;
+  roles?: string[];
+  correlationId?: string;
 }
 
 /**
@@ -37,6 +42,11 @@ export interface ActorContext {
  *
  * All reads and writes are tenant-scoped at the query level; the caller's
  * tenant id comes from the verified JWT, never from the request body.
+ *
+ * Enforcement integration (Part 2):
+ *  - Before user creation, reserve a slot via PlanLimitUsersGuard (atomic Lua)
+ *  - If creation fails after reservation, release the slot to prevent leak
+ *  - Guard resolves maxUsers from plan catalog, no hardcoded limits
  */
 @Injectable()
 export class UsersService {
@@ -48,6 +58,7 @@ export class UsersService {
     private readonly permissions: PermissionsService,
     private readonly roles: RolesService,
     private readonly audit: AuditService,
+    private readonly usersLimitGuard: PlanLimitUsersGuard,
   ) {}
 
   /** Projection used by the auth flow: includes the live permission set. */
@@ -90,6 +101,26 @@ export class UsersService {
       throw new ConflictException('A user with this email address already exists.', { email });
     }
 
+    // Enforcement: reserve maxUsers quota before creation (atomic Lua check-and-increment)
+    const enforcementActor: EnforcementActor = {
+      userId: context.actorId,
+      tenantId,
+      roles: context.roles ?? [],
+      ipHash: context.ipHash,
+      requestId: context.requestId,
+      correlationId: context.correlationId ?? context.requestId,
+    };
+
+    let quotaReserved = false;
+    try {
+      await this.usersLimitGuard.reserve(enforcementActor);
+      quotaReserved = true;
+    } catch (error) {
+      // PlanLimitExceededError or SubscriptionInactiveError propagates as-is
+      // No quota was reserved, so no release needed
+      throw error;
+    }
+
     // Without a password the account is created in an invitable state; the
     // random placeholder is never usable because it is discarded immediately.
     const password = dto.password ?? this.crypto.generateToken(24);
@@ -103,6 +134,12 @@ export class UsersService {
 
     if (roleRecords.length !== roleKeys.length) {
       const found = new Set(roleRecords.map((role) => role.key));
+      // Release quota on validation failure
+      if (quotaReserved) {
+        await this.usersLimitGuard.release(enforcementActor).catch(() => {
+          // Best-effort release; log but don't fail the validation error
+        });
+      }
       throw new AppException({
         code: ErrorCode.VALIDATION_ERROR,
         message: 'One or more roles are not available in this organisation.',
@@ -116,32 +153,43 @@ export class UsersService {
       });
     }
 
-    const created = await this.prisma.$transaction(async (tx) => {
-      const user = await tx.user.create({
-        data: {
-          tenantId,
-          email,
-          emailIndex,
-          passwordHash,
-          phone: dto.phone ?? null,
-          status: dto.password ? UserStatus.ACTIVE : UserStatus.PENDING_VERIFICATION,
-          profile: {
-            create: {
-              firstName: dto.firstName ?? null,
-              lastName: dto.lastName ?? null,
-              locale: dto.locale ?? 'en',
+    let created: { id: string };
+    try {
+      created = await this.prisma.$transaction(async (tx) => {
+        const user = await tx.user.create({
+          data: {
+            tenantId,
+            email,
+            emailIndex,
+            passwordHash,
+            phone: dto.phone ?? null,
+            status: dto.password ? UserStatus.ACTIVE : UserStatus.PENDING_VERIFICATION,
+            profile: {
+              create: {
+                firstName: dto.firstName ?? null,
+                lastName: dto.lastName ?? null,
+                locale: dto.locale ?? 'en',
+              },
             },
           },
-        },
-        select: { id: true },
-      });
+          select: { id: true },
+        });
 
-      await tx.userRole.createMany({
-        data: roleRecords.map((role) => ({ userId: user.id, roleId: role.id, tenantId })),
-      });
+        await tx.userRole.createMany({
+          data: roleRecords.map((role) => ({ userId: user.id, roleId: role.id, tenantId })),
+        });
 
-      return user;
-    });
+        return user;
+      });
+    } catch (error) {
+      // Release quota on creation failure to prevent leak
+      if (quotaReserved) {
+        await this.usersLimitGuard.release(enforcementActor).catch(() => {
+          // Best-effort release
+        });
+      }
+      throw error;
+    }
 
     await this.audit.record({
       tenantId,

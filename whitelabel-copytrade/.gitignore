@@ -1,82 +1,26 @@
 # Dependencies
 node_modules/
-.pnp/
-.pnp.js
-.yarn/
+.pnpm-store/
 
-# Build output
+# Production/Build output
 dist/
 build/
-out/
 .next/
+out/
 *.tsbuildinfo
 
-# Environment / secrets
+# Environment and sensitive data
 .env
-.env.*
-!.env.example
-*.pem
-*.key
-!infrastructure/**/*.key.example
-secrets/
-keys/
+.env.local
+.env.development.local
+.env.production.local
 
-# Logs
-logs/
+# Logs and Caches
 *.log
-npm-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Testing
+.cache/
+.turbo/
 coverage/
-.nyc_output/
 
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-
-# Flutter / Dart
-apps/mobile/.dart_tool/
-apps/mobile/.flutter-plugins
-apps/mobile/.flutter-plugins-dependencies
-apps/mobile/.packages
-apps/mobile/build/
-apps/mobile/ios/Pods/
-apps/mobile/ios/.symlinks/
-apps/mobile/android/.gradle/
-apps/mobile/android/local.properties
-apps/mobile/**/GeneratedPluginRegistrant.*
-apps/mobile/lib/generated/
-
-# Prisma
-apps/api/prisma/*.db
-apps/api/prisma/*.db-journal
-
-# IDE / OS
-.idea/
-.vscode/*
-!.vscode/extensions.json
+# OS specific
 .DS_Store
 Thumbs.db
-
-# Docker volumes
-infrastructure/docker/volumes/
-
-# Compiled output accidentally emitted next to the sources it came from.
-# `tsc` writes beside the input whenever outDir is missing or a stray tsconfig
-# is picked up, and those .js/.d.ts files then shadow the real .ts modules on
-# the next resolve. Ignoring them keeps the mistake out of the history.
-packages/*/src/**/*.js
-packages/*/src/**/*.d.ts
-packages/*/src/**/*.js.map
-packages/*/src/**/*.d.ts.map
-apps/api/src/**/*.js
-apps/api/src/**/*.d.ts
-services/notification-service/src/**/*.js
-services/notification-service/src/**/*.d.ts

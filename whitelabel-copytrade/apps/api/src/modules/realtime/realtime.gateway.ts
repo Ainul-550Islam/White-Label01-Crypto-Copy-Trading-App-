@@ -25,6 +25,8 @@ import { RedisService } from '../../infrastructure/redis/redis.service';
 import { WsAuthGuard, type AuthenticatedSocketData } from './guards/ws-auth.guard';
 import { REALTIME_DISPATCH_CHANNEL, type RealtimeDispatchMessage } from './realtime.constants';
 import { AppException } from '../../common/errors/app.exception';
+import { WebsocketLimitGuard } from '../billing/enforcement/websocket-limit.guard';
+import type { EnforcementActor } from '../billing/enforcement/enforcement.types';
 
 /**
  * Socket.IO gateway.
@@ -36,6 +38,12 @@ import { AppException } from '../../common/errors/app.exception';
  *     so a socket cannot subscribe itself into another tenant;
  *   - per-user connection count is capped to blunt resource exhaustion;
  *   - inbound messages are validated as strictly as HTTP bodies.
+ *
+ * Enforcement integration (Part 2):
+ *   - Before allowing connection, check websocketConnections plan limit via
+ *     WebsocketLimitGuard (atomic Lua reservation)
+ *   - On disconnect, release the slot to prevent leak
+ *   - Plan limit resolved from catalog, no hardcoded values
  */
 @WebSocketGateway({ namespace: '/realtime' })
 export class RealtimeGateway
@@ -51,6 +59,7 @@ export class RealtimeGateway
     private readonly wsAuth: WsAuthGuard,
     private readonly redis: RedisService,
     private readonly config: AppConfigService,
+    private readonly websocketLimitGuard: WebsocketLimitGuard,
     @InjectPinoLogger(RealtimeGateway.name) private readonly logger: PinoLogger,
   ) {}
 
@@ -120,6 +129,38 @@ export class RealtimeGateway
         return;
       }
 
+      // Enforcement: check websocketConnections plan limit (atomic reservation)
+      const enforcementActor: EnforcementActor = {
+        userId: actor.userId,
+        tenantId: actor.tenantId,
+        roles: [],
+        ipHash: '',
+        requestId: '',
+        correlationId: '',
+      };
+
+      try {
+        await this.websocketLimitGuard.reserveConnection(enforcementActor);
+      } catch (error) {
+        // Plan limit exceeded — reject connection with machine-readable code
+        const code = error instanceof AppException ? error.code : 'PLAN_LIMIT_EXCEEDED';
+        socket.emit(RealtimeEvent.CONNECTION_ERROR, {
+          code,
+          message: 'WebSocket connection limit reached for your current plan.',
+        });
+        socket.disconnect(true);
+        this.logger.warn(
+          {
+            event: 'realtime.limit_exceeded',
+            tenantId: actor.tenantId,
+            userId: actor.userId,
+            code,
+          },
+          'Rejected realtime connection due to plan limit',
+        );
+        return;
+      }
+
       existing.add(socket.id);
       this.connections.set(actor.userId, existing);
 
@@ -170,6 +211,11 @@ export class RealtimeGateway
         this.connections.delete(data.actor.userId);
       }
     }
+
+    // Enforcement: release websocket slot on disconnect to prevent leak
+    this.websocketLimitGuard.releaseConnection(data.actor.tenantId).catch(() => {
+      // Best-effort release; don't fail disconnect path
+    });
 
     this.logger.info(
       { event: 'realtime.disconnected', tenantId: data.actor.tenantId, socketId: socket.id },

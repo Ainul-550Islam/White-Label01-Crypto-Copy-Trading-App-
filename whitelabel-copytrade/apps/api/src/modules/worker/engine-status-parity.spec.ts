@@ -66,12 +66,13 @@ const toCamel = (name: string): string => {
   return head + rest.map((part) => part.charAt(0).toUpperCase() + part.slice(1)).join('');
 };
 
-/** The annotation → kind law. An annotation this function does not recognize is a
+/** The annotation -> kind law. An annotation this function does not recognize is a
  * hard failure, never a fallback: "the schema grew a type nobody looked at" is the
  * exact event this test exists to make loud. */
 const kindFor = (
   annotation: string,
   declaringClass: string,
+  fieldName?: string,
 ): { kind: EngineStatusKind; nullable: boolean } => {
   const text = annotation.trim();
   // Keyed by the annotation with any trailing `| None` removed, because that suffix is
@@ -89,12 +90,23 @@ const kindFor = (
     PlacementStatusView: 'placementView',
     LiveEnablementView: 'liveEnablementView',
     IncidentSinkView: 'incidentSinkView',
+    'dict[str, object]': 'distributedLockWiringView',
+  };
+  // Name-based overrides for fields that share the same Python type but map to
+  // different TS kinds. Without this, two `dict[str, object] | None` fields
+  // would both resolve to the same kind.
+  const nameOverrides: Readonly<Record<string, EngineStatusKind>> = {
+    venue_attestation: 'venueAttestationView',
+    credential_registry: 'credentialRegistryView',
   };
   const nullable = text.endsWith(' | None');
-  const kind = table[nullable ? text.slice(0, -' | None'.length) : text];
+  const bare = nullable ? text.slice(0, -' | None'.length) : text;
+  // Check name override first (only for fields that need disambiguation)
+  const nameOverride = fieldName !== undefined ? nameOverrides[fieldName] : undefined;
+  const kind = nameOverride ?? table[bare];
   if (kind === undefined) {
     throw new Error(
-      `schemas.py::${declaringClass} declares "${text}", which this parity spec has no mapping for. ` +
+      `schemas.py::${declaringClass} declares "${text}" (field "${fieldName}"), which this parity spec has no mapping for. ` +
         'Add the mapping and the mirror deliberately: silently classifying a new wire type as a string ' +
         'is how a contract mirror starts lying about a field it never looked at.',
     );
@@ -138,7 +150,7 @@ const declaredFields = (source: string, className: string): DeclaredField[] => {
     const splitAt = remainder.indexOf(' = ');
     const annotation = splitAt < 0 ? remainder : remainder.slice(0, splitAt);
     const defaultSource = splitAt < 0 ? null : remainder.slice(splitAt + 3);
-    const resolved = kindFor(annotation, className);
+    const resolved = kindFor(annotation, className, name);
     fields.push({
       key: toCamel(name),
       required: defaultSource === null,
@@ -190,7 +202,7 @@ describe('engine status contract - parity with the Python schema that defines it
       declaredFields(source, 'StatusResponse'),
       'StatusResponse',
     );
-    expect(ENGINE_STATUS_FIELDS).toHaveLength(20);
+    expect(ENGINE_STATUS_FIELDS).toHaveLength(25);
   });
 
   it('mirrors the three sub-documents the status route validates through', () => {

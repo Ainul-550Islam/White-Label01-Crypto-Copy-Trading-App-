@@ -6,7 +6,7 @@ import { IS_PUBLIC_KEY, SKIP_TENANT_KEY } from '../../../common/constants/metada
 import { AppException } from '../../../common/errors/app.exception';
 import type { AppRequest, TenantContext } from '../../../common/types/request.types';
 import { TenantResolverService } from '../tenant-resolver.service';
-import { SecurityEventsService } from '../../security/security-events.service';
+import { SecurityEventService as SecurityEventsService } from '../../security/security-event.service';
 
 /**
  * Authoritative tenant binding.

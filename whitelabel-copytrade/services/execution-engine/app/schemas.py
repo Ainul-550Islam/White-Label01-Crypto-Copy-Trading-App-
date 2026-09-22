@@ -334,6 +334,19 @@ class StatusResponse(_WireModel):
     #: every other block on this model uses.
     incidents: IncidentSinkView | None = None
     locks_distributed: bool
+    #: Part 20: signed transport posture. Whether the composition root
+    #: constructed a real key registry and transport client/verifier.
+    signed_transport_wired: bool = False
+    key_registry_configured: bool = False
+    #: Part 21: distributed lock wiring posture. The detailed wiring
+    #: metadata for the lock manager.
+    distributed_lock_wiring: dict[str, object] | None = None
+    #: Part 22: venue attestation posture. Whether a real Binance placement
+    #: attestor was constructed and wired into the placement reviewer.
+    venue_attestation: dict[str, object] | None = None
+    #: Part 23: credential registry posture. Provider selection, capabilities,
+    #: and credential metadata (no secrets).
+    credential_registry: dict[str, object] | None = None
     commands: list[str]
     simulated: bool = True
 

@@ -1,5 +1,0 @@
-1a23a69b5ee69916b24bb36fca9cd4660203d559452776e1e86f0c0df05062e5  apps/api/prisma/migrations/20260913120000_part11_row_level_security/migration.sql
-1b6d56cb501bbff9c526846b6539609c85e8b291e4341f9d534acdd9f86b1864  apps/api/prisma/rls/disable.sql
-f00dd4ec10e753ea9f660841952b31d4c23ebe6d488303079f0408a6d0b13436  apps/api/prisma/rls/enable.sql
-94cde61354d8d5226568f71e7c93dc56341673b1ac7fd43e7c0c823e33701d14  apps/api/prisma/rls/grant.sql
-d73f26a6a1dacb79e55d1e7eb5bebfc359639881fc2c87fcd918b443893bc558  apps/api/prisma/rls/rls_coverage.json

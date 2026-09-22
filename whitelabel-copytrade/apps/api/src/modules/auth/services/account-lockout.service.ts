@@ -6,7 +6,7 @@ import { ErrorCode, SecurityEventType, SecuritySeverity } from '@wlct/shared-typ
 import { AppConfigService } from '../../../config/app-config.service';
 import { CacheService } from '../../../infrastructure/redis/cache.service';
 import { PrismaService } from '../../../infrastructure/prisma/prisma.service';
-import { SecurityEventsService } from '../../security/security-events.service';
+import { SecurityEventService as SecurityEventsService } from '../../security/security-event.service';
 import { AppException } from '../../../common/errors/app.exception';
 
 /**

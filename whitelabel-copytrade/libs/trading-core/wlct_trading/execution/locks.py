@@ -44,6 +44,7 @@ __all__ = [
     "order_lock_key",
     "account_lock_key",
     "reconciliation_lock_key",
+    "FencedLockManager",
 ]
 
 
@@ -104,12 +105,18 @@ class LockHandle:
 
     The ``token`` is what makes release safe: only the holder that wrote this
     exact token may delete the key.
+
+    The optional ``fencing_token`` is a monotonically increasing integer that
+    advances with each acquisition of the same lock key. A stale worker that
+    resumes with an old fencing token can be detected and rejected because the
+    token value will be lower than the current generation.
     """
 
     key: str
     token: str
     acquired_at_micros: int
     ttl_millis: int
+    fencing_token: int = 0
 
     @property
     def expires_at_micros(self) -> int:
@@ -383,3 +390,137 @@ class RedisLockManager(LockManager):
                 f"Failed to extend lock {handle.key!r}: {type(exc).__name__}."
             ) from exc
         return bool(result)
+
+
+# -----------------------------------------------------------------------
+# Fencing token support
+# -----------------------------------------------------------------------
+# A fencing token is a monotonically increasing counter stored alongside
+# each lock key. When a lock is acquired, the counter is incremented and
+# the new value is returned as part of the LockHandle. Every subsequent
+# operation that depends on the lock must present the fencing token; if
+# the current counter has advanced beyond the presented value, the
+# operation is rejected because another owner has since acquired the lock.
+#
+# The fencing counter is stored at ``{lock_key}:fencing`` in Redis and is
+# never reset — it only goes up. This means a crashed worker that resumes
+# with an old fencing token will be correctly rejected.
+
+_FENCING_INCR_SCRIPT = """
+local current = redis.call('INCR', KEYS[1])
+return current
+"""
+
+_FENCING_GET_SCRIPT = """
+local current = redis.call('GET', KEYS[1])
+if current == false then
+    return 0
+end
+return current
+"""
+
+
+class FencedLockManager:
+    """A lock manager wrapper that adds fencing tokens.
+
+    Wraps an existing :class:`LockManager` and augments each acquisition
+    with a monotonically increasing fencing token. The fencing counter
+    is stored in Redis (for :class:`RedisLockManager`) or in memory
+    (for :class:`InMemoryLockManager`).
+
+    Usage::
+
+        fenced = FencedLockManager(redis_lock_manager, fencing_client)
+        handle = await fenced.acquire("my-lock", ttl_millis=10000)
+        print(handle.fencing_token)  # e.g. 1
+        # ... do work ...
+        await fenced.validate_fencing(handle)  # raises if stale
+        await fenced.release(handle)
+    """
+
+    __slots__ = ("_inner", "_fencing_client", "_counters", "_lock")
+
+    def __init__(
+        self,
+        inner: LockManager,
+        *,
+        fencing_client: object | None = None,
+    ) -> None:
+        self._inner = inner
+        self._fencing_client = fencing_client
+        self._counters: dict[str, int] = {}
+        self._lock = asyncio.Lock()
+
+    @property
+    def is_distributed(self) -> bool:
+        return self._inner.is_distributed
+
+    async def acquire(
+        self,
+        key: str,
+        *,
+        ttl_millis: int = 10_000,
+        wait_millis: int = 0,
+    ) -> LockHandle:
+        """Acquire the lock and issue a fencing token."""
+        handle = await self._inner.acquire(key, ttl_millis=ttl_millis, wait_millis=wait_millis)
+        fencing_value = await self._next_fencing_token(key)
+        return LockHandle(
+            key=handle.key,
+            token=handle.token,
+            acquired_at_micros=handle.acquired_at_micros,
+            ttl_millis=handle.ttl_millis,
+            fencing_token=fencing_value,
+        )
+
+    async def release(self, handle: LockHandle) -> bool:
+        return await self._inner.release(handle)
+
+    async def extend(self, handle: LockHandle, *, ttl_millis: int) -> bool:
+        return await self._inner.extend(handle, ttl_millis=ttl_millis)
+
+    async def validate_fencing(self, handle: LockHandle) -> None:
+        """Validate that the handle's fencing token is still current.
+
+        Raises :class:`LockError` if the token is stale.
+        """
+        current = await self._current_fencing_token(handle.key)
+        if handle.fencing_token < current:
+            raise LockError(
+                f"Stale fencing token for {handle.key!r}: presented "
+                f"{handle.fencing_token}, current is {current}. "
+                f"Another worker has acquired the lock since this "
+                f"handle was issued."
+            )
+
+    async def _next_fencing_token(self, key: str) -> int:
+        """Generate the next fencing token for a lock key."""
+        fencing_key = f"{key}:fencing"
+        if self._fencing_client is not None:
+            try:
+                result = await self._fencing_client.eval(
+                    _FENCING_INCR_SCRIPT, 1, fencing_key
+                )
+                return int(result)
+            except Exception:
+                # Fall through to in-memory if Redis is unavailable
+                pass
+        async with self._lock:
+            current = self._counters.get(fencing_key, 0)
+            next_val = current + 1
+            self._counters[fencing_key] = next_val
+            return next_val
+
+    async def _current_fencing_token(self, key: str) -> int:
+        """Read the current fencing token for a lock key."""
+        fencing_key = f"{key}:fencing"
+        if self._fencing_client is not None:
+            try:
+                result = await self._fencing_client.eval(
+                    _FENCING_GET_SCRIPT, 1, fencing_key
+                )
+                return int(result) if result else 0
+            except Exception:
+                pass
+        async with self._lock:
+            return self._counters.get(fencing_key, 0)

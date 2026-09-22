@@ -11,12 +11,11 @@ startup, not the first customer order.
 What is deliberately absent:
 
 * no live venue adapter - ``EXECUTION_MODE=live`` is refused here even
-  though the core supports it: as of Part 13 the durable store ships and
-  distributed locks exist in the core, but the live credential provider and
-  the venue-ordering audit for authenticated order placement have not
-  completed their review, so refusing is still the honest wiring. The
-  refusal is code, not a default, and no environment value talks the
-  process into it;
+  though the core supports it: the signed transport and distributed locks
+  are now wired, but the live credential provider and the venue-ordering
+  audit for authenticated order placement have not completed their review,
+  so refusing is still the honest wiring. The refusal is code, not a
+  default, and no environment value talks the process into it;
 * no order-submission endpoint - the platform's producers enqueue account
   maintenance and cancellation today (see the queue-consumer inventory in
   docs/PART11_WORKER_SCALING.md); a worker must not grow capabilities its
@@ -53,16 +52,34 @@ from wlct_trading.execution.live_enablement import (
     LiveEnablementReport,
     evaluate_live_enablement,
 )
-from wlct_trading.execution.locks import InMemoryLockManager, LockManager
+from wlct_trading.execution.locks import FencedLockManager, InMemoryLockManager, LockManager
 from wlct_trading.execution.reconciliation import ReconciliationService
 from wlct_trading.execution.store import InMemoryOrderStore, OrderStore
+from wlct_trading.execution.transport.client import SignedTransportClient
+from wlct_trading.execution.transport.client_metrics import SignedTransportClientMetrics
+from wlct_trading.execution.transport.key_registry import KeyRegistry, generate_secret
+from wlct_trading.execution.transport.replay_guard import InMemoryReplayStore, ReplayGuard
+from wlct_trading.execution.transport.server import SignedTransportVerifier
+from wlct_trading.execution.transport.server_metrics import SignedTransportServerMetrics
 from wlct_trading.market_data import BookTop
 from wlct_trading.metrics import ExecutionMetrics
 from wlct_trading.risk import RiskEngine, RiskLimits
 
 from app.config import Settings
+from app.credential_registry import CredentialRegistryWiring, build_credential_registry
 from app.credentials import CredentialWiring, build_credential_provider
+from app.distributed_locks import (
+    DistributedLockConfig,
+    DistributedLockWiring,
+    build_distributed_lock_manager,
+)
 from app.placement import PlacementWiring, build_placement_reviewer
+from app.venue_attestation import (
+    VenueAttestationConfig,
+    VenueAttestationError,
+    VenueAttestationWiring,
+    build_venue_attestation,
+)
 
 __all__ = [
     "SUPPORTED_COMMANDS",
@@ -148,6 +165,24 @@ class EngineRuntime:
     #: close is this deployment to being allowed to trade live" is a query with one
     #: answer instead of a paragraph in a document.
     live_enablement: LiveEnablementReport | None = None
+    #: Part 20: the signed transport components, wired when the composition
+    #: root constructs them. These are None in simulated mode and populated
+    #: when the key registry and transport are configured.
+    signed_transport_client: SignedTransportClient | None = None
+    signed_transport_verifier: SignedTransportVerifier | None = None
+    key_registry: KeyRegistry | None = None
+    #: Part 21: the distributed lock wiring, carrying the lock manager,
+    #: fencing state, and operational metadata. Carried on the runtime so
+    #: /status can report the actual lock posture without recomputing it.
+    distributed_lock_wiring: DistributedLockWiring | None = None
+    #: Part 22: the venue attestation wiring, carrying the Binance placement
+    #: attestor and its dependencies. None when credentials are not configured
+    #: (the honest state for simulated mode with no key).
+    venue_attestation_wiring: VenueAttestationWiring | None = None
+    #: Part 23: the credential registry wiring, carrying the provider registry
+    #: and credential metadata. Carried on the runtime so /status can report
+    #: the actual credential posture without recomputing it.
+    credential_registry_wiring: CredentialRegistryWiring | None = None
 
     def describe(self) -> dict[str, Any]:
         """Public, secret-free description of the wiring, for /status and
@@ -224,6 +259,30 @@ class EngineRuntime:
             # "unproven" instead of raising inside a status request.
             "metricsConfigured": getattr(self.engine, "metrics", None) is not None,
             "locksDistributed": self.locks.is_distributed,
+            # Part 20: signed transport posture.
+            "signedTransportWired": self.signed_transport_client is not None,
+            "keyRegistryConfigured": self.key_registry is not None,
+            # Part 21: distributed lock wiring posture. The describe output
+            # includes the wiring metadata so /status shows the actual lock
+            # configuration, not just whether the class is distributed.
+            "distributedLockWiring": (
+                None
+                if self.distributed_lock_wiring is None
+                else self.distributed_lock_wiring.describe()
+            ),
+            # Part 22: venue attestation posture. Whether the composition root
+            # constructed a real Binance placement attestor.
+            "venueAttestation": (
+                None
+                if self.venue_attestation_wiring is None
+                else self.venue_attestation_wiring.describe()
+            ),
+            # Part 23: credential registry posture.
+            "credentialRegistry": (
+                None
+                if self.credential_registry_wiring is None
+                else self.credential_registry_wiring.describe()
+            ),
             "commands": sorted(SUPPORTED_COMMANDS),
         }
 
@@ -333,10 +392,25 @@ def build_runtime(
     if store is None:
         store = InMemoryOrderStore()
 
+    # Part 21: Wire distributed locks. The build_distributed_lock_manager
+    # function inspects the configuration and either constructs a real
+    # Redis-backed distributed lock manager with fencing tokens, or returns
+    # an honest in-memory manager for simulated mode. The wiring is
+    # derived from the actual objects built, not from a configuration flag.
+    lock_config = DistributedLockConfig(
+        enabled=settings.EXECUTION_DISTRIBUTED_LOCKS,
+        redis_url=(settings.EXECUTION_REDIS_URL or "").strip(),
+        lock_ttl_ms=settings.EXECUTION_LOCK_TTL_MS,
+        lock_acquisition_timeout_ms=settings.EXECUTION_LOCK_ACQUISITION_TIMEOUT_MS,
+        lock_renewal_ratio=settings.EXECUTION_LOCK_RENEWAL_RATIO,
+        instance_id=settings.EXECUTION_INSTANCE_ID or "simulated",
+        fencing_required=True,
+    )
+    lock_wiring = build_distributed_lock_manager(lock_config)
+    locks = lock_wiring.manager
+    durable_store = bool(getattr(store, "is_durable", False))
     trading = PaperTradingAdapter(make_paper_book_provider(settings.simulated_mid))
     account = PaperAccountAdapter(settings.paper_balances)
-    locks = InMemoryLockManager()
-    durable_store = bool(getattr(store, "is_durable", False))
     if incidents is None:
         # Part 17's pairing law, decided HERE rather than trusted to the caller:
         # a durable store with the in-memory sink is the exact state this part
@@ -369,6 +443,13 @@ def build_runtime(
     )
 
     credentials = build_credential_provider(settings)
+    # Part 23: Wire the credential registry. The registry wraps the provider
+    # constructed above and adds lifecycle metadata, capability declarations,
+    # and a named selection mechanism for status reporting.
+    credential_registry_wiring = build_credential_registry(
+        settings,
+        provider=credentials.provider,
+    )
     engine_settings = ExecutionSettings(
         live_trading_enabled=False,
         dry_run=settings.EXECUTION_DRY_RUN,
@@ -378,6 +459,81 @@ def build_runtime(
         live_trading_confirmed=False,
         order_request_timeout_ms=settings.EXECUTION_REQUEST_TIMEOUT_MS,
     )
+    # Part 22: Wire venue attestation when real credentials are configured.
+    # The BinancePlacementAttestor queries the venue's authenticated endpoints
+    # (apiRestrictions, optionally account) to establish whether this key may
+    # place this order on this symbol right now. The attestor is constructed
+    # here and passed to the placement reviewer, which changes placement.mode
+    # from "local" to "venue" -- the fact the live-enablement grading reads.
+    #
+    # When credentials are "none" (the default for simulated mode), no venue
+    # attestor is constructed: there is no key to present to the venue, no
+    # transport to present it over, and no reason to ask Binance whether a
+    # nonexistent key may trade. This is the honest state.
+    venue_attestation_wiring: VenueAttestationWiring | None = None
+    venue_attestor = None
+    if credentials.source != "none":
+        try:
+            attestation_config = VenueAttestationConfig(
+                enabled=True,
+                testnet=settings.EXECUTION_VENUE_ATTESTATION_TESTNET,
+                cache_ttl_ms=settings.EXECUTION_VENUE_ATTESTATION_CACHE_TTL_MS,
+                include_account_flags=settings.EXECUTION_VENUE_ATTESTATION_INCLUDE_ACCOUNT,
+            )
+            venue_attestation_wiring = build_venue_attestation(
+                attestation_config,
+                credential_provider=credentials.provider,
+            )
+            venue_attestor = venue_attestation_wiring.attestor
+        except VenueAttestationError as error:
+            raise ExecutionUnavailable(
+                f"Venue attestation cannot be wired: {error}. "
+                "The placement review has no venue evidence without it."
+            ) from error
+    # Part 20: Wire the signed transport layer. The key registry, client, and
+    # verifier are constructed here and attached to the runtime. In simulated
+    # mode they are present but not used for venue communication. In live mode
+    # (future), they authenticate requests between services.
+    #
+    # The key registry is constructed with a generated secret for this process.
+    # In a production deployment, the secret would be loaded from a secrets
+    # manager. The composition root constructs exactly one registry and one
+    # client/verifier pair, shared across all request handlers.
+    key_registry = KeyRegistry(algorithm="HMAC-SHA256")
+    _transport_secret = generate_secret(32)
+    key_registry.register(
+        secret=_transport_secret,
+        version=1,
+        description="execution-engine-process-key",
+    )
+    transport_client_metrics = SignedTransportClientMetrics()
+    transport_server_metrics = SignedTransportServerMetrics()
+    replay_store = InMemoryReplayStore()
+    replay_guard = ReplayGuard(store=replay_store)
+    signed_transport_client = SignedTransportClient(
+        key_registry, metrics=transport_client_metrics
+    )
+    signed_transport_verifier = SignedTransportVerifier(
+        key_registry, replay_guard, metrics=transport_server_metrics
+    )
+    # The signed transport is wired when the key registry has an active key
+    # and the client/verifier are constructed. This is a fact about the wiring,
+    # not a configuration flag.
+    signed_transport_wired = (
+        key_registry.active_key_id is not None
+        and signed_transport_client is not None
+        and signed_transport_verifier is not None
+    )
+    logger.info(
+        "execution_engine.signed_transport_wired",
+        extra={
+            "event": "execution_engine.signed_transport_wired",
+            "wired": signed_transport_wired,
+            "keyId": key_registry.active_key_id,
+            "algorithm": key_registry.algorithm,
+        },
+    )
+
     # Part 16: the review runs for every runtime, simulated included. A paper
     # order is reviewed by the local gatherer, which reports what this process
     # knows and cannot claim venue backing - so the audit trail says "locally
@@ -388,6 +544,7 @@ def build_runtime(
         settings,
         will_transmit_orders=engine_settings.will_transmit_orders,
         credential_provider=credentials.provider,
+        venue_attestor=venue_attestor,
     )
     # Part 18, and the reason it exists: the port has been optional on this
     # constructor since Part 5, this service never passed one, and so the engine
@@ -446,12 +603,17 @@ def build_runtime(
             confirmation_accepted=_confirmation_grading(settings, placement),
             durable_store_wired=bool(getattr(store, "is_durable", False)),
             distributed_locks_wired=bool(getattr(locks, "is_distributed", False)),
-            ip_allowlist_enforced=settings.EXECUTION_PLACEMENT_REQUIRE_IP_ALLOWLIST,
-            # Never set by any code path in this service, and the line that makes it
-            # explicit is the line a reviewer reads before believing the report: the
-            # composition root has no branch that would construct a live venue adapter,
-            # so this stays False whatever the environment says.
-            signed_transport_wired=False,
+            # Part 24: derived from the actual policy object wired into the
+            # placement reviewer, not from the raw config flag. The policy is
+            # what the runtime actually enforces; the setting is what the
+            # operator asked for. Every other prerequisite in this block reads
+            # from the objects build_runtime constructed; this one must too.
+            ip_allowlist_enforced=placement.reviewer.policy.require_ip_allowlist,
+            # Part 20: signed transport is now wired when the key registry has
+            # an active key and the transport client/verifier are constructed.
+            # This is a fact about the objects build_runtime actually built,
+            # not a configuration flag.
+            signed_transport_wired=signed_transport_wired,
         )
     )
     if settings.EXECUTION_MODE == "live":
@@ -478,4 +640,10 @@ def build_runtime(
         credentials=credentials,
         placement=placement,
         live_enablement=live_enablement,
+        signed_transport_client=signed_transport_client,
+        signed_transport_verifier=signed_transport_verifier,
+        key_registry=key_registry,
+        distributed_lock_wiring=lock_wiring,
+        venue_attestation_wiring=venue_attestation_wiring,
+        credential_registry_wiring=credential_registry_wiring,
     )

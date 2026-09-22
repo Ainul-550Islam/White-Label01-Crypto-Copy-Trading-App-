@@ -18,6 +18,7 @@ import { AuditModule } from './modules/audit/audit.module';
 import { SecurityModule } from './modules/security/security.module';
 import { FeatureFlagsModule } from './modules/feature-flags/feature-flags.module';
 import { BillingModule } from './modules/billing/billing.module';
+import { ComplianceModule } from './modules/compliance/compliance.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { RealtimeModule } from './modules/realtime/realtime.module';
 import { ExecutionModule } from './modules/execution/execution.module';
@@ -25,6 +26,15 @@ import { StrategyModule } from './modules/strategy/strategy.module';
 import { DatasetsModule } from './modules/datasets/datasets.module';
 import { RiskModule } from './modules/risk/risk.module';
 import { ObservabilityModule } from './modules/observability/observability.module';
+import { ExchangesModule } from './modules/exchanges/exchanges.module';
+import { CopyTradingModule } from './modules/copy-trading/copy-trading.module';
+import { ResearchModule } from './modules/research/research.module';
+import { RiskManagementModule } from './modules/risk-management/risk-management.module';
+import { OmsModule } from './modules/oms/oms.module';
+import { OperationsModule } from './modules/operations/operations.module';
+import { PortfolioAccountingModule } from './modules/portfolio-accounting/portfolio-accounting.module';
+import { ClientLifecycleModule } from './modules/client-lifecycle/client-lifecycle.module';
+import { CustodyModule } from './modules/custody/custody.module';
 
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
 import { PrismaExceptionFilter } from './common/filters/prisma-exception.filter';
@@ -75,6 +85,7 @@ import { RateLimitModule } from './common/rate-limit/rate-limit.module';
     AuthModule,
     FeatureFlagsModule,
     BillingModule,
+    ComplianceModule,
     NotificationsModule,
     RealtimeModule,
     ExecutionModule,
@@ -82,6 +93,15 @@ import { RateLimitModule } from './common/rate-limit/rate-limit.module';
     DatasetsModule,
     RiskModule,
     ObservabilityModule,
+    ExchangesModule,
+    CopyTradingModule,
+    ResearchModule,
+    RiskManagementModule,
+    OmsModule,
+    OperationsModule,
+    PortfolioAccountingModule,
+    ClientLifecycleModule,
+    CustodyModule,
   ],
   providers: [
     { provide: APP_PIPE, useClass: GlobalValidationPipe },

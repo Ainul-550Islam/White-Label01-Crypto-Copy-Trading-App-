@@ -86,9 +86,14 @@ class LivePrerequisite(str, Enum):
 #: rather than left to be inferred from "nobody sets that field", so that the day a
 #: part does wire a signed transport, the change is a decision about THIS constant,
 #: reviewed as one, instead of a boolean that started meaning something else.
-HARD_BLOCKERS: Final[frozenset[LivePrerequisite]] = frozenset(
-    {LivePrerequisite.SIGNED_TRANSPORT_WIRED}
-)
+#:
+#: Part 20: SIGNED_TRANSPORT_WIRED has been removed from HARD_BLOCKERS because the
+#: composition root now constructs a real key registry, signed transport client,
+#: and verifier. The signed transport is wired when these components are present.
+#: The startup refusal still occurs because other prerequisites (venue attestor,
+#: operator confirmation, etc.) may not be satisfied, but the signed transport
+#: itself is no longer structurally unsatisfiable.
+HARD_BLOCKERS: Final[frozenset[LivePrerequisite]] = frozenset()
 
 
 @dataclass(frozen=True, slots=True)

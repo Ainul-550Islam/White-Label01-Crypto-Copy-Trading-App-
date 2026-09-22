@@ -116,6 +116,30 @@ class Settings(BaseSettings):
     EXECUTION_REQUEST_TIMEOUT_MS: int = 5_000
     #: Lease TTL for the core's own account/order locks (milliseconds).
     EXECUTION_LOCK_TTL_MS: int = 15_000
+    #: Lock acquisition timeout (milliseconds). How long to wait for a lock
+    #: before giving up. Shorter means faster failure; longer means less
+    #: contention under load.
+    EXECUTION_LOCK_ACQUISITION_TIMEOUT_MS: int = 5_000
+    #: Lock renewal interval as a fraction of TTL (0.1–0.9). The renewal
+    #: fires at TTL * ratio, giving two attempts before expiry at 1/3.
+    EXECUTION_LOCK_RENEWAL_RATIO: float = 1.0 / 3.0
+    #: Whether to use Redis-backed distributed locks. When false (default),
+    #  the in-memory lock manager is used (simulated mode only). When true,
+    #  EXECUTION_REDIS_URL must be set and reachable.
+    EXECUTION_DISTRIBUTED_LOCKS: bool = False
+    #: Redis URL for distributed locks, e.g. redis://localhost:6379/0.
+    #: Required when EXECUTION_DISTRIBUTED_LOCKS=true.
+    EXECUTION_REDIS_URL: str | None = None
+    # --- Venue attestation (Part 22) -----------------------------------------
+    #: Whether to include account-level checks in venue attestation
+    #: (queries /api/v3/account for canTrade). Adds 20 weight units per
+    #: attestation; disable for weight-constrained deployments.
+    EXECUTION_VENUE_ATTESTATION_INCLUDE_ACCOUNT: bool = False
+    #: Whether the venue is Binance testnet. Changes the REST base URL.
+    EXECUTION_VENUE_ATTESTATION_TESTNET: bool = False
+    #: Attestation cache TTL in milliseconds. Bounds enforced by the core's
+    #: CachingPlacementAttestor (1000..3600000).
+    EXECUTION_VENUE_ATTESTATION_CACHE_TTL_MS: int = 300_000
 
     # --- Simulated venue shaping -------------------------------------------
     #: Fixed mid used as top-of-book for any symbol. Unset means the paper
@@ -322,6 +346,36 @@ class Settings(BaseSettings):
             raise ValueError(
                 "EXECUTION_LOCK_TTL_MS below one second elects on network jitter"
             )
+        if self.EXECUTION_LOCK_ACQUISITION_TIMEOUT_MS < 100:
+            raise ValueError(
+                "EXECUTION_LOCK_ACQUISITION_TIMEOUT_MS below 100ms cannot "
+                "reliably acquire a lock across a network"
+            )
+        if not 0.1 <= self.EXECUTION_LOCK_RENEWAL_RATIO <= 0.9:
+            raise ValueError(
+                "EXECUTION_LOCK_RENEWAL_RATIO must be between 0.1 and 0.9"
+            )
+        renewal_ms = int(self.EXECUTION_LOCK_TTL_MS * self.EXECUTION_LOCK_RENEWAL_RATIO)
+        if renewal_ms >= self.EXECUTION_LOCK_TTL_MS:
+            raise ValueError(
+                f"Lock renewal interval ({renewal_ms}ms) must be strictly "
+                f"less than lock TTL ({self.EXECUTION_LOCK_TTL_MS}ms)"
+            )
+        if self.EXECUTION_DISTRIBUTED_LOCKS:
+            redis_url = (self.EXECUTION_REDIS_URL or "").strip()
+            if not redis_url:
+                raise ValueError(
+                    "EXECUTION_DISTRIBUTED_LOCKS=true requires EXECUTION_REDIS_URL; "
+                    "a distributed lock manager without a Redis URL is a "
+                    "configuration that believes it is distributed while having "
+                    "nowhere to lock"
+                )
+            if not redis_url.startswith(("redis://", "rediss://", "unix://")):
+                raise ValueError(
+                    "EXECUTION_REDIS_URL must start with redis://, rediss://, "
+                    "or unix://; a malformed URL would fail at the first lock "
+                    "acquisition rather than at startup"
+                )
         if self.EXECUTION_SIMULATED_MID is not None:
             _parse_decimal(self.EXECUTION_SIMULATED_MID, "EXECUTION_SIMULATED_MID")
         for part in self.EXECUTION_PAPER_BALANCES.split(","):
@@ -725,6 +779,9 @@ class Settings(BaseSettings):
             "dryRun": self.EXECUTION_DRY_RUN,
             "requestTimeoutMillis": self.EXECUTION_REQUEST_TIMEOUT_MS,
             "lockTtlMillis": self.EXECUTION_LOCK_TTL_MS,
+            "lockAcquisitionTimeoutMillis": self.EXECUTION_LOCK_ACQUISITION_TIMEOUT_MS,
+            "distributedLocksEnabled": self.EXECUTION_DISTRIBUTED_LOCKS,
+            "redisUrlConfigured": (self.EXECUTION_REDIS_URL or "").strip() != "",
             "simulatedMidConfigured": self.EXECUTION_SIMULATED_MID is not None,
             "paperBalanceAssets": sorted(self.paper_balances),
             # The DSN itself never appears here (whitelist law); the boolean
